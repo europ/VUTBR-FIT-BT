@@ -16,21 +16,28 @@
 
 ### Section 2
 
-* **what is it ... usage ... application ... (+) and (-)**
-* Continuous integration
-* Automated code review
+* Theoretical basis
+	* Continuous integration
+		* what is it
+		* where is it used
+		* how does it work
+	* Automated code review
+		* what is it
+		* where is it used
+		* how does it work
 
 ### Section 3
-
-* Open Source
-* Github
-* Travis
+* CI in Open Source projects
+	* Open Source
+	* Github
+	* Travis
+	* Jenkins
 * Ruby
 
 ### Section 4
 
 * ManageIQ bot
-* Conclusion (Redhat,ManageIQ)
+* Conclusion (Redhat,ManageIQ, CI, Automated Code Review)
 
 ---
 
