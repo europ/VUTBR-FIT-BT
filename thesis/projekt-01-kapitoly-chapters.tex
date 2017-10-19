@@ -2,18 +2,25 @@
 % (c) Michal Bidlo, Bohuslav Křena, 2008
 
 \chapter{Introduction}
-In these days, Continuous Integration (CI) is more often used in larger projects, where are multiple developers working on the same one software product. This process ensure fast developement, called eXtreme Programming (XP), known as agile software developement methodology. The methodology is mainly used for the speed of the developement nevertheless many disruptions may be fetched in the developing software. The developement process requires many code checking tools after every single code change in the source code of the software. Forasmuch as with every signle change of code, there is a possibility to add, fix, derange or deteriorate any parts of the software product. These tools provide an automated code review and they afford a quick feedback to the developer, who has made the change in the code, about his adjustment. The automated process which provides the code review do not bother without executing a huge amount of tests. Above mentioned process is conducted via CI server, also called as \uv{bot}. This \uv{bot} is invoked every time after any change in the source code and he had to execute the stated acts which are predefined.\\
-This thesis attempts to explain how the fundamentals of continuous integration and automated code review work. It describes how it is integrated to the software developement, and how it works on an extensive project nowadays. Examples will be based on open-source project - ManageIQ, which is a cloud manager founded by RedHat. The developing process of the ManageIQ rests in agile and stable progress of developement. These main factors of the developement process could not be reached without a quick feedback about the changes, that are submitted to the software.
 
-\section{Software Engineering \& Software Developement}
-Beforehand we describe how does the continuous integration work and how, we could reveal what is software engineering and software developement, in which is continuous integration used. ...\\
-TODO: def. or descr.: SW product, methodology
+In these days, Continuous Integration (CI) is more often used in larger projects, where are multiple developers working on one and the same software product. This process ensure fast software developement, called eXtreme Programming (XP), known as agile software developement methodology. The methodology is mainly used for the speed of the developement, nevertheless many disruptions may be fetched into the developing software. Nowadays, although this type of software developement has many disadvantages, it is still much more often used on larger projects. You may also know that the continuous integration is a part of the following open-source projects e.g. facebook, twitter, mozilla. These projects are using one of many famous continuous integration service Travis CI. Excluding Travis CI, there are plenty of other continuous integration services you may heard about, such as Jenkins, TeamCity, CircleCI, GitLab CI, Codeship and so on.\newline
+\newline
+The developement process requires many code checking tools after every single code change in the source code of the software. Forasmuch as with every signle change of code, there is a possibility to add, fix, derange or deteriorate any parts of the software product. These tools provide an automated code review and they afford a quick feedback by which they try to prevent these code impairments. Feedback is sent to the developer, who has made the change in the code, about his adjustment. The automated process which provides the code review do not bother without executing a huge amount of tests. Above mentioned process is conducted via continuous integration server, which compile the code, runs scripts and test. The results are aggregated and feedback is given to the developer who has made this code change. Continuous integration server is invoked every single time after any change is fetched in the source code and he had to execute the stated acts which are predefined. In next chapters we describe in details how does this workflow works and what steps are required to run.\newline
+\newline
+This thesis attempts to explain how the fundamentals of continuous integration and automated code review work. It describes how it is integrated to the 
+software developement, and how it works on an extensive project nowadays. Examples will be based on open-source project e.g. ManageIQ, which is a cloud manager 
+founded by RedHat. The developing process of the ManageIQ rests in agile and stable progress of developement. These main factors of the developement process 
+could not be reached without a quick feedback to the developers working on project about their changes, that are submitted to the software product.
+
+\chapter{Continuous Integration \& Automated Code Review}
 
 \section{Continuous Integration}
-Continuous integration has a key role in the software developement process consisting of few certain unavoidable steps. Everything begins in the moment, when one developer, who has made changes in the source code of the software product is trying to commit them into the software product. The process of continuous integration has begun at this point. ...
+Continuous integration has a key role in the software developement process consisting of few certain unavoidable steps. Everything begins at the moment, when one developer, who has made changes in the source code of the software product is trying to commit them into the software product. The process of continuous integration has begun at this point and lasts until feedback is sent back to the developer.
 
 \section{Automated Code Review}
 Abcd.
+
+%=====================================================================================
 
 \section{Musíme mít co říci}
 Dalším důležitým předpokladem dobrého psaní je {\it psát pro někoho}. Píšeme-li si poznámky sami pro sebe, píšeme je jinak než výzkumnou zprávu, článek, diplomovou práci, knihu nebo dopis. Podle předpokládaného čtenáře se rozhodneme pro způsob psaní, rozsah informace a~míru detailů.
