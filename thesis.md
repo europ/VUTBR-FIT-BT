@@ -51,9 +51,14 @@
 
 ### bibliography:
 
-* http://www.fit.vutbr.cz/study/DP/BP.php?id=18948&file=t
 * The Pragmatic Programmer, Andrew Hunt, David Thomas (ISBN-13 978-0-201-61622-4)
 * Continuous Integration: Improving Software Quality and Reducing Risk, Paul M. Duvall (ISBN-13: 978-0321336385)
+* [Continuous Integration and Its Tools](http://ieeexplore.ieee.org.ezproxy.lib.vutbr.cz/document/6802994/)
+
+
+* [Static Code Analysis Tools: Effects on
+Development of Open Source Software](https://www.google.cz/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwj1oM78-v_WAhXGWxoKHcgBDCgQFggxMAA&url=https%3A%2F%2Frepository.tudelft.nl%2Fislandora%2Fobject%2Fuuid%3Ab157de07-e5ce-4dba-8eae-154a0002a4f5%2Fdatastream%2FOBJ%2Fdownload&usg=AOvVaw1UAyLhpanCQKOkos7vkRQy)
+* http://www.fit.vutbr.cz/study/DP/BP.php?id=18948&file=t
 
 
 * https://martinfowler.com/articles/continuousIntegration.html
