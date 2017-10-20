@@ -8,11 +8,19 @@
 5. Implement some of the enhancements after a discussion with the project's maintainers.
 6. Evaluate the enhanced developer experience achieved by these enhancements
 
+
 ---
+
+# TODO:
+
+* bibliography VS. footnote e.g. "Travis CI" -> "https://travis-ci.org/"
+
+---
+
 
 ### Section 1
 
-* Introduction (Redhat,ManageIQ)
+* Introduction :white_check_mark:
 
 ### Section 2
 
