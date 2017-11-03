@@ -72,6 +72,7 @@ Development of Open Source Software](https://www.google.cz/url?sa=t&rct=j&q=&esr
 * https://blog.travis-ci.com/2016-07-28-what-we-learned-from-analyzing-2-million-travis-builds/
 * https://inventitech.com/publications/2016_beller_gousios_zaidman_travistorrent_synthesizing_travis_ci_and_github_for_full-stack_research_on_continuous_integration.pdf
 * https://peerj.com/preprints/1984.pdf
+* https://is.muni.cz/th/422370/fi_b/thesis.txt
 
 ---
 
