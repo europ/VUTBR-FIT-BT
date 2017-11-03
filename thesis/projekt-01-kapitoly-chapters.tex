@@ -1,3 +1,5 @@
+\newtheorem{DEF}{Definition}
+
 %=====================================================================================
 \chapter{Introduction}
 
@@ -18,23 +20,35 @@ Continuous integration has a key role in the software development process consis
 [IMAGE - CI book page 5]
 
 \subsection{Demands of continuous integration}
-The minimal requirements for good software development of a project where multiple developers are working on a same project are a version control repository and a continuous integration server. The version control system guarantees a software configuration management which is required for the continuous integration. The continuous integration could not be deployed without a version control system. The meaning of the version control system is very important. You cannot manage changes that developers had made in the source code without a version control system. The version control system has a very positive impact on the developing project. The system offers a history of changes which may be highly useful if a rollback is desired. Besides the history of changes, this system may save more other information about the source code, e.g. who did the change, etc. In addition, the version control system is represents a primary source for the project source codes. This type of project setup is much more often used these days rather than in the past. Nearly every project has its own version control system which is provided by a repository hosting service.\\
+The minimal requirements for good software development of a project where multiple developers are working on a same project are a version control repository and a continuous integration server. The version control system guarantees a software configuration management which is required for the continuous integration. The continuous integration could not be deployed without a version control system. The meaning of the version control system is very important. You cannot manage changes that developers had made in the source code without a version control system. The version control system has a very positive impact on the developing project. The system offers a history of changes which may be highly useful if a rollback is desired. Besides the history of changes, this system may save more other information about the source code, e.g. who did the change, when was the change created, etc. In addition, the version control system is represents a primary source for the project source codes. This type of project setup is much more often used these days rather than in the past. Nearly every project has its own version control system which is provided by a repository hosting service.\\
 
 A continuous integration server has a huge advantage. This is a reason why it is highly recommended. It depends on the developer, how does he deploy the continuous integration server. With the continuous integration server, he does not have to bother with such many scripts for the automation. Nevertheless, as he decides how the continuous integration server will be established, the system must contain these features. To facilitate the process of continuous integration, the system must support services as polling version control system, retention of build history, launching predefined steps such as scripts and tests. Furthermore, the system should offer an opportunity to send a feedback back to the developers. This server executes a series of actions or steps taken in order to achieve a particular end of continuous integration. The next subsection will determine and state these fundamental steps of the continuous integration scenario, describe and illustrate them in detail.
 
 \subsection{Stages of continuous integration}
 
-The stages of continuous integration insure code inspection and code integration. Before we begin, we need to clarify certain concepts which will be used later. To understand these steps, we need to understand what is the difference between a build, a private build and an integration build. In general, a build may refer to a [TODO-citacia z knihy]. The private build define a process in which a software developer runs the build on his local machine to ensure that the changes he made work, before he commits them into a version control repository. The integration build [TODO].\\
+The stages of continuous integration insure code inspection and code integration. Before we begin, we need to clarify certain concepts which will be used later. To understand these steps, we need to understand what is the difference between \textbf{a build}, \textbf{a private build} and \textbf{an integration build}.
 
-1. The change.\\
+\begin{DEF}
+A build may refer to a set of activities performed to generate, test, inspect, and deploy software.\cite{CI}
+\end{DEF}
 
-The first step starts at the moment of committing the change by developer to a version control repository.\\
+\begin{DEF}
+A private build define a process in which a software developer runs the build on his local machine to ensure that the changes he made work, before he commits them into a version control repository.
+\end{DEF}
 
-2. The reaction.\\
+\begin{DEF}
+An integration build is the act of combining software components (programs and files) into a software system.\cite{CI}
+\end{DEF}
 
-3. The feedback.\\
+\begin{enumerate}
+	\item The change.\\
+		  =[REWRITE]The first step starts at the moment of committing the change by developer to a version control repository.
+	\item The reaction.
+	\item The feedback.
+	\item The waiting.
+\end{enumerate}
 
-4. The waiting.\\
+
 
 \section{Automated Code Review}
 Abcd.
