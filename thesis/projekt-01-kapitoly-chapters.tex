@@ -40,17 +40,21 @@ A private build define a process in which a software developer runs the build on
 An integration build is the act of combining software components (programs and files) into a software system.\cite{CI}
 \end{DEF}
 
-Now as we know what are these concepts we will illustrate the basic acts of continuous integration. To describe it properly, imagine that we have a group of developers working on the same project using a version control system where is the source code held, and they are using a continuous integration service. The stages of continuous integration are the following:
+Now as we know what are these concepts we will illustrate the basic acts of continuous integration. To describe it properly, imagine that we have a group of developers working on the same project using a version control system where is the source code of the software product held, and they are using a continuous integration service. The stages of continuous integration are the following:
 
 \begin{enumerate}
 	\item \textbf{The change}\\
-		  One developer who wish like to make a change, adjustment, improvement or a new feature in the software product, he has to clone the remote version control repository to his local computer to download the source code of the software product. At this point he has a local version control repository in which he will do the changes he would like to. By default the repository has a default branch called master. Master branch is a branch where is the actual stable version of software held. After a made change, the change is only in local repository and the developer would like to commit them into remote repository. The developer has to create a pull request, which is a request for an approval of a change ready to merge into the remote repository.
+		  One developer who wish like to make a change, adjustment, improvement or a new feature in the software product, he has to clone the remote version control repository to his local computer to download the source code of the software product. At this point he has a local version control repository in which he will do the changes he would like to. After a made change, the change is only in local repository and the developer would like to commit them into remote repository. Before publishing the changes he has to run a private build. The developer has to publish the changes he made, which is a request for an approval of a change ready to merge into a specific branch on remote repository. These not merged changes are published on remote version control repository.\\
+		  By committing changes to the version control repository invokes a continuous integration server. The continuous integration server is polling the version control repository in a periodic intervals and when a changes is detected than a reaction will occur.
 	\item \textbf{The reaction}\\
-		  Asdf.
+		  When a change is detected it invokes a continuous integration server to execute a few tasks. Tasks are predefined in a build script which has to integrate the change with the source code of the software product. The script provide source code compilation, database integration, testing, code inspection and software deployment. The execution of the script is referred to as an integration build.\\
+		  \textcolor{red}{TODO: write more}
 	\item \textbf{The feedback}\\
-		  Asdf.
-	\item \textbf{The waiting}
-		  Asdf.
+		  Continuous integration server generates a feedback which is assigned to this change and it may be sent to the author of the change.\\
+		  \textcolor{red}{TODO: write more}
+	\item \textbf{The waiting}\\
+		  The continuous polling of version control repository waiting for a change is repeated.\\
+		  \textcolor{red}{TODO: write more}
 \end{enumerate}
 
 
