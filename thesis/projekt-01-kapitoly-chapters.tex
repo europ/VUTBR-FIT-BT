@@ -17,7 +17,12 @@ Despite the fact that continuous integration and automated code review are used 
 \section{Continuous Integration}
 Continuous integration has a key role in the software development process consisting of a few certain unavoidable steps which will be described later in next subsections. Everything begins at the moment, when one developer who has made changes in a source code of the software product is trying to commit them into the software product. The process of continuous integration has begun at this point and lasts until feedback is sent back to the developer. These stages of continuous integrations are proceed every time after the CI server has detected a change in a version control repository. This automation has a lot of benefits which are necessary to keep the software product without any kind of defects. Many of them are detected in time and reported back to the developer as a corrupted source code. Not a few developers may think that the continuous integration is only about compiling a source code and launching tests. In the next subsections, we will present the steps of the continuous integration and describe these individual phases in detail.\\
 
-[IMAGE - CI book page 5]
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.6]{yEd/components_of_CI_system.eps}
+	\caption{Components of continuous integration system\cite{CI}}
+	\label{fig:cocis}
+\end{figure}
 
 \subsection{Demands of continuous integration}
 The minimal requirements for good software development of a project where multiple developers are working on a same project are a version control repository and a continuous integration server. The version control system guarantees a software configuration management which is required for the continuous integration. The meaning of the version control system is very important. You cannot manage changes that developers had made in the source code without a version control system. The version control system has a very positive impact on the developing project. The system offers a history of changes which may be highly useful if a rollback is desired. Besides the history of changes, this system may save more other information about the source code, e.g. who did the change, when was the change created, etc. In addition, the version control system is represents a primary source for the project source codes. This type of project setup is much more often used these days rather than in the past. Nearly every project has its own version control system which is provided by a repository hosting service.\\
