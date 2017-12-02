@@ -67,7 +67,18 @@ Now as we know what are these concepts we will illustrate the basic acts of cont
 
 If the software development proceed to use a continuous integration in the workflow it might have a configured CI server. The principal sense of a continuous integration server is for get rid of manual integration build. The configuration of the CI server depends on source code verification requirements and on type of polling. The CI server can also provide an additional automation for necessary essentials to the development such as integration, deployment, etc.\\
 
-Types of polling can be divided into two pars, time dependent polling and change dependent polling. CI server with time dependent polling is configured to check the version control repository for a new change in a predefined periodic time intervals e.g. every 10 minutes. Contrariwise, CI server with change dependent polling is invoked on every single action which is a change in a version control repository, via informative message about the current action sent to CI server. This message including event stats is triggered on a specified event in the version control repository which must support this feature.
+Types of polling can be divided into two pars, time dependent polling and change dependent polling. CI server with time dependent polling is configured to check the version control repository for a new change in a predefined periodic time intervals e.g. every 10 minutes. Contrariwise, CI server with change dependent polling is invoked on every single action which is a change in a version control repository, via informative message about the current action sent to CI server. This message including event stats is triggered on a specified event in the version control repository which must support this feature.\\
+
+{\color{red}TODO: launching continuous integration: on event (change) to get feedback, periodically (software status in version control repository)}\\
+
+Transforming sources into a system and simultaneously providing a review about the transformation is an intricate process. A CI system use a build script allowing build automation, which includes every predestined statement to execute. The main script {\color{red}[might/may/can]} consist from a set of subscripts, which divide the automation into segments that are bound to themselves according to the execution order. Segments are shown in order in figure \ref{fig:lpobs} showing the logical parts of a build script. Script perform a build also called as software build what is not just about the source code compilation and tests launch.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{yEd/the_logical_processes_of_a_build_script.eps}
+	\caption{The logical processes of a build script\cite{CIPD}}
+	\label{fig:lpobs}
+\end{figure}
 
 \section{Automated Code Review}
 Abcd.
