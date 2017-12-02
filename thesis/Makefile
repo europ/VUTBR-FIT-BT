@@ -52,7 +52,7 @@ vlna:
 
 # Spocita normostrany / Count of standard pages
 normostrany:
-	echo "scale=2; `detex -n $(CO)-[01]*.tex | wc -c`/1800;" | bc
+	@echo "scale=2; `detex -n $(CO)-[01]*.tex | wc -c`/1800;" | bc
 
 git: all
 	rm -f *.dvi *.log $(CO).blg $(CO).bbl $(CO).toc *.aux $(CO).out $(CO).lof $(CO).ptc
