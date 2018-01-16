@@ -21,6 +21,7 @@ $(CO).pdf: clean
 	bibtex $(CO)
 	pdflatex -draftmode $(CO)
 	pdflatex $(CO)
+	cp $(CO).pdf ../PDF/thesis.pdf
 
 $(CO).dvi: $(CO).tex $(CO).bib
 	latex $(CO)

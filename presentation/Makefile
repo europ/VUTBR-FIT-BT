@@ -1,4 +1,8 @@
-# usage: make filename.pdf
-%.pdf: %.tex
-	pdflatex $<
-	pdflatex $<
+FILE=presentation
+
+make:
+	pdflatex $(FILE).tex
+	cp $(FILE).pdf ../PDF/
+
+clean:
+	rm -f *.aux *.log *.nav *.out *.snm *.toc
