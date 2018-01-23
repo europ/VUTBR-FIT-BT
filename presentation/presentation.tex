@@ -76,6 +76,16 @@
 	\end{multicols}
 \end{frame}
 
+\begin{frame}\frametitle{Continuous Integration}
+	\begin{centering}
+		\large{How it works?}\\[1em]
+	\end{centering}
+	\begin{figure}[H]
+		\centering
+		\hspace{-1.7em} \includegraphics[scale=0.4]{eps/build_script.eps}
+	\end{figure}
+\end{frame}
+
 \begin{frame}\frametitle{Automated Code Review}
 	Types of code review:
 	\begin{itemize}
@@ -87,11 +97,10 @@
 			\end{itemize}
 		\item automated code review
 			\begin{itemize}
-				\item[$\circ$] matching set of rules\\[0.25em]
-				\item[$\circ$] static analysis\\[0.25em]
-				\item[$\circ$] analytic method\\[0.25em]
+				\item[$\circ$] inspection of code quality e.g coding standards, trailing spaces, code duplication, not enough / too many comments, etc.\\[0.25em]
 				\item[$\circ$] detection of basic mistakes and vulnerabilities\\[0.25em]
-				\item[$\circ$] reduce code review duration
+				\item[$\circ$] matching set of rules providing static analysis\\[0.25em]
+				\item[$\circ$] RuboCop, SonarQube, RIPS, FlexeLint
 			\end{itemize}
 	\end{itemize}
 \end{frame}
