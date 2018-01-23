@@ -84,6 +84,7 @@ Development of Open Source Software](https://www.google.cz/url?sa=t&rct=j&q=&esr
 * Gitter integration - e.g. yell if master is broken
 * Track dependent PRs - e.g. comment if merged
 * Integrate with Github status API - https://developer.github.com/v3/repos/statuses
+* Can reuse PR processing code at https://github.com/theforeman/prprocessor
 
 ---
 
