@@ -85,7 +85,9 @@ Now as we know what are these concepts we will illustrate the basic acts of cont
 
 If the software development proceed to use continuous integration in the workflow it might have a configured CI server. The principal sense of a continuous integration server is to get rid of a manual integration build. The configuration of the CI server depends on source code verification requirements and on type of polling. The CI server can also provide an additional automation for necessary essentials to the development such as integration, deployment, etc.\\
 
-The continuous integration system is founded on automation what is conducted by CI server. Automation is an act, where manual tasks are united and executed together in order to simplify the execution of manual tasks. Nowadays, in software development automations can be found in a different parts of software development which help to accelerate the development process. In a CI system there are different types of builds and mechanisms used for an automation.\\
+The continuous integration system is founded on automation what is conducted by CI server. Automation is an act, where manual tasks are united and executed together in order to simplify the execution of manual tasks. Nowadays, in software development automations can be found in a different parts of software development which help to accelerate the development process. In a CI system there are different types of builds and mechanisms used for an automation.
+
+\subsubsection{Polling}
 
 Build mechanisms can be divided into types such as on-demand, scheduled, poll for change and event-driven mechanism\cite{CIPD}. The simplest automated mechanism, on-demand mechanism, can be done by single script in order to get rid of tasks repetition executed by the developer. The on-demand mechanism is a user-driven process in which someone manually initiates an integration build\cite{CIPD}. Scheduled mechanism is a planned event accomplished by CI server in a predefined time. In a situation where multiple developers are frequently working on a product during the day, the best choice for a build should be a time planned in night. The scheduled type is used particularly when an advanced build of the software product is needed to be done. Scheduled processes are driven by time, for instance, so that it runs on an hourly basis, whether or not a change has occurred\cite{CIPD}.\\
 
@@ -93,26 +95,39 @@ Poll for change mechanism and event-driven mechanism differ only in a way of inv
 
 Types of polling can be divided into two parts - time dependent polling and change dependent polling. CI server with time dependent polling is configured to check the version control repository for a new change in a predefined periodic time intervals e.g. every 10 minutes. Contrariwise, CI server with change dependent polling is invoked on every single action which is a change in a version control repository via an informative message about the current action sent to the CI server. This message including event stats is triggered on a specified event in the version control repository which must support this feature.\\
 
-Time dependent polling is mostly used in general due to inadequacies such as missing event triggering in version control repository. Due to this fundamental feature some of CI servers has to have  periodic polling on time. The main disadvantage is the time taken by downloading the actual source code from the repository. After the download is complete, the changes are still unknown, a comparison must be done between the latest and the last source code for the purpose of obtaining the new changes. Change dependent polling download only the real change towards the actual source code status made in the repository. If the version control system can support this feature the source code synchronization is much more faster and efficiently done.\\
+Time dependent polling is mostly used in general due to inadequacies such as missing event triggering in version control repository. Due to this fundamental feature some of CI servers has to have  periodic polling on time. The main disadvantage is the time taken by downloading the actual source code from the repository. After the download is complete, the changes are still unknown, a comparison must be done between the latest and the last source code for the purpose of obtaining the new changes. Change dependent polling download only the real change towards the actual source code status made in the repository. If the version control system can support this feature the source code synchronization is much more faster and efficiently done.
 
 %=====================================================================================
 \subsection{Build Script}
 %=====================================================================================
 
-Instigation of CI system begin with a change in the version control system resulting in build script execution. Transforming sources into a system and simultaneously providing a review about the transformation is an intricate process also known as continuous integration, delivery and deployment. A CI system use a build script allowing build automation, which includes every predestined statement to execute. This automation had a magnificent demand on software development. To get rid of constantly repeated actions for the purpose to accelerate the software development was created a build script. The principal script consists from a set of subscripts, which divide the automation into segments that are bound to themselves according to the execution order. Segments are shown in order in Figure \ref{fig:lpobs} showing the logical parts of a build script. Script perform a build also called as software build what is not just about the source code compilation and tests launch. These various parts smoothly executed construct a functional unit of the software product. The script warrants simplification because of the developers adjust the source code and they are able to gain instant feedback about they work. As Martin Fowler said \uv{Get everything you need into source control get it so that you can build the whole system with a single command.}\cite{CIMF}.
+Instigation of CI system begin with a change in the version control system resulting in build script execution. Transforming sources into a system and simultaneously providing a review about the transformation is an intricate process also known as continuous integration, delivery and deployment. A CI system use a build script allowing build automation, which includes every predestined statement to execute. This automation had a magnificent demand in software development. To get rid of constantly repeated actions for the purpose to accelerate the software development was created a build script. The principal script consists from a set of subscripts, which divide the automation into segments that are bound to themselves according to the execution order. Segments are shown in order in Figure \ref{fig:lpobs} showing the logical parts of a build script. Script perform a build also called as software build what is not just about the source code compilation and tests launch. These various parts smoothly executed construct a functional unit of the software product. A working function unit congregation leads to working software deployment as the final step of CI. The script warrants simplification because of the developers adjust the source code and they are able to gain instant feedback about they work. As Martin Fowler said \uv{Get everything you need into source control get it so that you can build the whole system with a single command.}\cite{CIMF}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{yEd/the_logical_processes_of_a_build_script.eps}
-	\caption{The logical processes {\color{red}forming / of a} build script\cite{CIPD}}
+	\caption{The logical processes of a build script\cite{CIPD}}
 	\label{fig:lpobs}
 \end{figure}
 
-Developers would like to have as fast feedback as possible. To guarantee this quality there are different types of build script provided on different roles of requests. Build scripts are divided by the role as lightweight and heavyweight scripts. Lightweight scripts are much more faster than heavyweighter, they are used on {\color{red}Dopísať (CI str 93. - lightweight vs. heavyweight)}
-
+The whole point of Continuous Integration is to provide rapid feedback\cite{CIMF}. Developers would like to have as fast feedback as possible. To guarantee this quality there are different types of build scripts provided on different roles of requests. Build scripts are divided by the role as lightweight and heavyweight scripts. Lightweight scripts are much more faster than heavyweight scripts, they are used on principle of speed. To ensure this behavior, at first the lightweight scripts are initiated because they can easily catch the basic vulnerabilities and then more advanced tests, inspections, and others are launched by heavyweight scripts what leads to integration build. Martin Fowler marked lightweight script, which does the first build, as a \uv{commit build}\cite{CIMF}. These scripts endeavor for quickness, error detection and software integration, besides that, they also provide a feedback about the results of the whole process to the developer.
 
 \hfill\\
 {\color{red}TODO: Build script and its parts description}
+
+%=====================================================================================
+\subsection{Best practices}
+%=====================================================================================
+
+Asdf.
+
+
+%=====================================================================================
+\subsection{Benefits of Continuous Integration}
+%=====================================================================================
+
+Asdf.
+
 
 %=====================================================================================
 \section{Code Review}
