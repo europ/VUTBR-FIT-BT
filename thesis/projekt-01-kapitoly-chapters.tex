@@ -55,9 +55,19 @@ A build may refer to a set of activities performed to generate, test, inspect, a
 A private build define a process in which a software developer runs the build on his local machine to ensure that the changes he made work before he commits them into a version control repository.
 \end{DEF}
 
-\begin{DEF}
+\begin{DEF}\label{def:IntegrationBuild}
 An integration build is the act of combining software components (programs and files) into a software system\cite{CIbook}.
 \end{DEF}
+
+Figure \ref{fig:IntegrationBuild} mentions the before stated Definition \ref{def:IntegrationBuild} which depicts the result of combination individual parts (components) of the software into a single software system. The transformation process that integrate these software components together into a one unified entity is called as an integration build.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=1]{img/system_integration.pdf}
+	\caption{Integration build.}
+	\label{fig:IntegrationBuild}
+\end{figure}
+
 
 Now as we know what are these concepts we will illustrate the basic stages of continuous integration. To describe it properly, imagine that we have a group of developers working on the same project using a version control system where the source code of the software product is held, and they use a continuous integration service. The stages of continuous integration are the following:
 
@@ -125,15 +135,12 @@ Continuous Integration is also referred to as a \uv{cure for human error in depl
 
 In general, if any group of developers would like to use a CI practice, they should fulfill few standards and dwell on these standards. In order for developers to benefit from implementing the practice of CI, they should change their typical day-to-day software development habits\cite{CIQualityFramework}. Usage of CI is beneficial sideline when a developer commits frequently, daily, often, probably few times per day. Farthest, the project should be hosted somewhere on any kid of version control repository which represents a main source for the source code of the product. Besides these two sole development requirements, the expectations are that the developers should not try to commit a broken code. It is avoidable by initiating a private build on their local machine, which decrease the fail chance of the build launched by the CI server.\\
 
-By using CI practice, the risks as software corruption and integration problems are reduced appreciably and any kid of bugs are uncovered quickly. The integration may take unpredictable long time but the use of the CI practice resolve this problem by integrating the software frequently which may result in a few small kind of integration issues. Some other software methodologies integrate their work once after a long time which brings their software to face an incredibly huge integration problem. Martin Fowler pointed this problem in his article: \uv{I was told that this project had been in development for a couple of years and was currently integrating, and had been integrating for several months.}\cite{MartinFowler}. Several articles describe this long time integration as a \textit{Big Bang Integration}\cite{AaltoUniversity}. As we can see on Figure \ref{fig:integration} the risk of the software integration is markedly reduced by using a CI practice.
-
-\hfill\\
-{\color{red}GRAPH from \cite{AaltoUniversity} page 12/42 - continuous integration vs big bang integration}
+By using CI practice, the risks as software corruption and integration problems are reduced appreciably and any kid of bugs are uncovered quickly. The integration may take unpredictable long time but the use of the CI practice resolve this problem by integrating the software frequently which may result in a few small kind of integration issues. Some other software methodologies integrate their work once after a long time which brings their software to face an incredibly huge integration problem. Martin Fowler pointed this problem in his article: \uv{I was told that this project had been in development for a couple of years and was currently integrating, and had been integrating for several months.}\cite{MartinFowler}. Several articles describe this long time integration as a \textit{Big Bang Integration}\cite{AaltoUniversity}. As we can see on Figure \ref{fig:integration} the risk of the software integration is markedly reduced by using a daily (continuous) integration which is used in a CI practice.
 
 \begin{figure}[H]
 	\centering
-	%\includegraphics[scale=1]{}
-	\caption{Integration of the software.\cite{AaltoUniversity}}
+	\includegraphics[scale=0.5]{img/big_bang_vs_daily_build.pdf}
+	\caption{Comparison of integration builds\cite{AaltoUniversity}.}
 	\label{fig:integration}
 \end{figure}
 
