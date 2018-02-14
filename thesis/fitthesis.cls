@@ -831,7 +831,7 @@
 \usepackage{ragged2e}
 \usepackage{url}
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
-\def\UrlBreaks{\do\/\do-}
+\def\UrlBreaks{\do\/\do-\do\_}
 
 \usepackage{blindtext}
 \usepackage{listings}
