@@ -27,10 +27,10 @@ Continuous integration (CI) has a key role in the software development process c
 To imagine the process, there is a illustration about the components and their connections in the process of continuous integration in Figure \ref{fig:cocis}. The image illustrates situation when \textit{Developer 1} commits changes to the version control repository. The CI server detects this change and provide a feedback about the change back to the \textit{Developer 1}. The \textit{Developer 1} can review informations about change that he made in the given feedback, e.g. tests results.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.6]{yEd/components_of_CI_system.eps}
-	\caption{Components of continuous integration system \cite{CIbook}.}
-	\label{fig:cocis}
+    \centering
+    \includegraphics[scale=0.6]{yEd/components_of_CI_system.eps}
+    \caption{Components of continuous integration system \cite{CIbook}.}
+    \label{fig:cocis}
 \end{figure}
 
 %=====================================================================================
@@ -62,10 +62,10 @@ An integration build is the act of combining software components (programs and f
 Figure \ref{fig:IntegrationBuild} mentions the before stated Definition \ref{def:IntegrationBuild} which depicts the result of combination individual parts (components) of the software into a single software system. The transformation process that integrate these software components together into a one unified entity is called as an integration build.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[scale=1]{img/system_integration.pdf}
-	\caption{Integration build.}
-	\label{fig:IntegrationBuild}
+    \centering
+    \includegraphics[scale=1]{img/system_integration.pdf}
+    \caption{Integration build.}
+    \label{fig:IntegrationBuild}
 \end{figure}
 
 
@@ -73,19 +73,19 @@ Now as we know what are these concepts we will illustrate the basic stages of co
 
 \begin{enumerate}
 
-	\item \textbf{The change}\\[0.1em]
-		  One developer who wish to make a change, adjustment, improvement or to create a new feature in the software product has to clone the remote version control repository to his local computer to download the source code of the software product. At this point, he has a local version control repository in which he will do the changes he would like to. After a change is made, the change is only in a local repository and the developer would like to commit it into the remote repository. Before publishing the change, he has to run a private build. The developer has to publish the change he made which is a request for an approval of the change ready to merge into a specific branch on the remote repository. These not merged changes are published on the remote version of the control repository.\\[0.1em]
-		  By committing changes to the version control repository a continuous integration server is invoked. The continuous integration server polles the version control repository when a change is detected, after this poll a reaction occures.
+    \item \textbf{The change}\\[0.1em]
+          One developer who wish to make a change, adjustment, improvement or to create a new feature in the software product has to clone the remote version control repository to his local computer to download the source code of the software product. At this point, he has a local version control repository in which he will do the changes he would like to. After a change is made, the change is only in a local repository and the developer would like to commit it into the remote repository. Before publishing the change, he has to run a private build. The developer has to publish the change he made which is a request for an approval of the change ready to merge into a specific branch on the remote repository. These not merged changes are published on the remote version of the control repository.\\[0.1em]
+          By committing changes to the version control repository a continuous integration server is invoked. The continuous integration server polles the version control repository when a change is detected, after this poll a reaction occures.
 
-	\item \textbf{The reaction}\\[0.1em]
-		  When a change is detected it invokes a continuous integration server to execute a few tasks. The tasks are predefined in a build script which has to integrate the change with the rest of the source code of the software product. The script provide source code compilation, database integration, testing and code inspection. The execution of the script is referred to as an integration build.\\[0.1em]
-		  This stage of continuous integration usually includes also code verification. It finds defects or errors made by developer, e.g a compilation fail, tests failures etc. The errors are detected by tests which should have high code coverage. A number of errors in this stage can be reduced by launching a private build which may be less complex compared to launching the build script. Passing this stage depends on success of the build script which must be success on 100\%.
+    \item \textbf{The reaction}\\[0.1em]
+          When a change is detected it invokes a continuous integration server to execute a few tasks. The tasks are predefined in a build script which has to integrate the change with the rest of the source code of the software product. The script provide source code compilation, database integration, testing and code inspection. The execution of the script is referred to as an integration build.\\[0.1em]
+          This stage of continuous integration usually includes also code verification. It finds defects or errors made by developer, e.g a compilation fail, tests failures etc. The errors are detected by tests which should have high code coverage. A number of errors in this stage can be reduced by launching a private build which may be less complex compared to launching the build script. Passing this stage depends on success of the build script which must be success on 100\%.
 
-	\item \textbf{The feedback}\\[0.1em]
-		  The continuous integration server generates a feedback associated to the results of the build which is assigned to this change and it might be sent to the author of the change. There is log information generated every time, by passing the reaction stage, and it is held and assigned to the change. Feedback is given to the developer in a certain predefined form, e.g. email with failures only. The log file is saved on the continuous integration server where there is an overview about the builds and their stats.
+    \item \textbf{The feedback}\\[0.1em]
+          The continuous integration server generates a feedback associated to the results of the build which is assigned to this change and it might be sent to the author of the change. There is log information generated every time, by passing the reaction stage, and it is held and assigned to the change. Feedback is given to the developer in a certain predefined form, e.g. email with failures only. The log file is saved on the continuous integration server where there is an overview about the builds and their stats.
 
-	\item \textbf{The waiting}\\[0.1em]
-		  This stage is the end of the process. It stands for continuous polling of  the version control repository waiting for a new change. Detecting a change will cause launching the stages from the beginning.
+    \item \textbf{The waiting}\\[0.1em]
+          This stage is the end of the process. It stands for continuous polling of  the version control repository waiting for a new change. Detecting a change will cause launching the stages from the beginning.
 
 \end{enumerate}
 
@@ -114,10 +114,10 @@ Time dependent polling is mostly used in general due to inadequacies such as mis
 Instigation of CI system begin with a change in the version control system resulting in build script execution. Transforming sources into a system and simultaneously providing a review about the transformation is an intricate process also known as continuous integration, delivery and deployment. A CI system uses a build script allowing build automation, which includes every predestined statement to execute. This automation had a magnificent demand in software development. To get rid of constantly repeated actions for the purpose to accelerate the software development a build script was created. The principal script consists of a set of subscripts, which divide the automation into segments that are bound to themselves according to the execution order. Segments are shown in order in Figure \ref{fig:lpobs}. It shows the logical parts of a build script. Script performs a build also called as a software build which is not just about the source code compilation and tests launch. These various smoothly executed parts construct a functional unit of the software product. A working function unit congregation leads to working software deployment as the final step of CI. The script warrants simplification because of the developers adjust the source code and they are able to gain instant feedback about their work. As Martin Fowler said \uv{Get everything you need into source control get it so that you can build the whole system with a single command.} \cite{MartinFowler}.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{yEd/the_logical_processes_of_a_build_script.eps}
-	\caption{The logical processes of a build script \cite{CIbook}.}
-	\label{fig:lpobs}
+    \centering
+    \includegraphics[scale=0.5]{yEd/the_logical_processes_of_a_build_script.eps}
+    \caption{The logical processes of a build script \cite{CIbook}.}
+    \label{fig:lpobs}
 \end{figure}
 
 The whole point of continuous integration is to provide rapid feedback \cite{MartinFowler}. Developers would like to have as fast feedback as possible. To guarantee this quality there are different types of build scripts provided on different roles of requests. Build scripts are divided by the role as lightweight and heavyweight scripts. Lightweight scripts are much more faster than heavyweight scripts. They are used on principle of speed. To ensure this behavior, at first the lightweight scripts are initiated because they can easily catch the basic vulnerabilities and then more advanced tests, inspections, and others are launched by heavyweight scripts which leads to an integration build. Martin Fowler marked the lightweight script which does the first build, as a \uv{commit build} \cite{MartinFowler}. These scripts endeavor for quickness, error detection and software integration, besides that, they also provide a feedback about the results of the whole process to the developer.
@@ -138,10 +138,10 @@ In general, if any group of developers would like to use a CI practice, they sho
 By using CI practice, the risks as software corruption and integration problems are reduced appreciably and any kid of bugs are uncovered quickly. The integration may take unpredictable long time but the use of the CI practice resolve this problem by integrating the software frequently which may result in a few small kind of integration issues. Some other software methodologies integrate their work once after a long time which brings their software to face an incredibly huge integration problem. Martin Fowler pointed this problem in his article: \uv{I was told that this project had been in development for a couple of years and was currently integrating, and had been integrating for several months.} \cite{MartinFowler}. Several articles describe this long time integration as a \textit{Big Bang Integration} \cite{AaltoUniversity}. As we can see on Figure \ref{fig:integration} the risk of the software integration is markedly reduced by using a daily (continuous) integration which is used in a CI practice.
 
 \begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.5]{img/big_bang_vs_daily_build.pdf}
-	\caption{Comparison of integration builds \cite{AaltoUniversity}.}
-	\label{fig:integration}
+    \centering
+    \includegraphics[scale=0.5]{img/big_bang_vs_daily_build.pdf}
+    \caption{Comparison of integration builds \cite{AaltoUniversity}.}
+    \label{fig:integration}
 \end{figure}
 
 Prevention against any type of error in a CI is solved via integration build performed on a CI server. Predicting the result of build has drawn the interest of academia and industry \cite{ResultsOfCIbuild}. In term of build result analysis and prediction, most existing studies focused mainly on large software project developed and maintained by big companies \cite{ResultsOfCIbuild}. Travis CI community has created a TravisTorrent\footnote{The name of TravisTorrent was chosen to resemble the close proximity to the GHTorrent project \cite{TravisTorrentWEBPAGE}.} \cite{TravisTorrent} for the purpose of providing a huge amount of information about the builds for full-stack research on continuous integration which is still a developed prototype. Alongside the TravisTorrent, the GitHub company has provided information about the data inside of their version control system in a project called \uv{The GHTorrent project}\footnote{The name signifies a torrent of data coming from GitHub \cite{GHTorrentWEBPAGE}.} \cite{GHTorrent}. Based on these given informations as an open dataset, a few analysis were conducted on them resolving the CI practice in a real life developed projects. The best practices were established on the results of the empirical studies of these obtained data sets provided by many of associations.
@@ -175,11 +175,37 @@ Some of the build fix solutions involve dropping the last commit - last change r
 
 \subsubsection{Keep the Build Fast}
 
-The stumbling block of the CI practice is the duration time of build. Build time may be inappropriately long, what is unacceptable for the developers and can lead to dysfunction of CI. Every minute you reduce off the build time is a minute saved for each developer every time they commit \cite{MartinFowler}. The most crucial and meaningful solution for reduction of the build duration is inside of the build pipeline. Build is executed by a build script which can be divided into parts which were described in section \ref{build_script}. {\color{red}TODO...}
+The stumbling block of the CI practice is the duration time of build. Because the build and test steps must be performed frequently, it is essential that these processes be streamlined to minimize the time spent on these steps \cite{DigitalOceanCI}. Build time may be inappropriately long, what is unacceptable for the developers and can lead to the dysfunction of CI. Every minute you reduce off the build time is a minute saved for each developer every time they commit \cite{MartinFowler}. The most crucial and meaningful solution for reduction of the build duration is inside of the build pipeline. Build is executed by a build script which can be divided into parts which were described in section \ref{build_script}. According to the reduction of the build time, tests took a long enough part of the build time too. A CI practice laboriously rely on the unit test which run approximately equal to core components what makes them very fast. They are the first line of defense in ensuring quality \cite{CI_atlassian}. Vice versa, the API\footnote{Application programming interface} and functional tests are greater time consumers due to their complexity. Graph in Figure \ref{fig:grap_dependence} depicts the dependence of these two factors. A solution of this situation lies in a well chosen pipeline of the deployment, more  precisely, how to run multiple builds in phases properly. When possible, running different sections of the test suite in parallel can help move the build through the pipeline faster \cite{DigitalOceanCI}. A useful consideration of using many of unit tests with high code coverage which have minimal maintenance may also lead the build to time reduction.
 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.6]
+        \node[] (i) at (0, 0) {};
+        \node[] (l) at (10, 10) {};
 
-\hfill\\
-{\color{red}TODO: List of best practices}
+        \node[label={[align=center,rotate=90]Length and complexity\\of build}] (left_text) at (0, 5) {};
+        \node[label={[align=center]Comprehensivness\\of testing}] (right_text) at (4.8, -2.1) {};
+
+        \draw[draw=black, thick, <-] (10, 0) -- (0, 0);
+        \draw[draw=black, thick, ->] (0, 0) -- (0, 10);
+        \draw[draw=blue,  thick] (i) to[out=0, in=270] (l);
+    \end{tikzpicture}
+    \caption{Dependence between length and complexity of the build and comprehensiveness of tests \cite{deployment_automation}.}
+    \label{fig:grap_dependence}
+\end{figure}
+
+\subsubsection{Everyone can See What is Happening}
+
+Continuous Integration is all about communication \cite{MartinFowler}. Using a CI practice means to share all the gathered informations with the project members. Anybody from the team members should see the informations about the adjustment in the code that somebody had created. But, it is not just about others work, it is about the project state and the changes which have been made inside of it and about the new ones which will be integrated into it.\\
+
+The fundamental part of the CI is the granted feedback about the result of the build realized by the CI server. Feedback is a summary about the log generated 
+during build. These informations about the build status should be easy to obtain for anybody ensuring the development speed and quality. Developers must know the status of their adjustment after being handed over to the build. The news in the feedback are very important, especially at some build break. Information obtained from the feedback serve to fine-tune the made adjustment by the creator. Every single build result is assigned to the belonging commit (adjustment) which was made. These informations should be retained for the case if somebody would like to look for a build passing in the past - build passing before the current state. Developers should easily gain these informations and they should be notified if any kind of build broke arose on their work.
+
+\subsubsection{Automate Deployment}
+
+Automating deployment helps to reduce waste \cite{CollabNet}. Automated deployment is nearly adherent to release automation. An essential part of releasing a software product is deploying it, first on development environments, then on QA\footnote{Quality Assurance} and UAT\footnote{User Acceptance Testing} environments, and finally on the real production environment, either on the developing organization's premises, on a customer's premises or on the cloud \cite{deployment_automation}. The usage of the CI required multiple development environments. It comes to this, that you have to move the binaries between multiple environments what follows to create scripts if no manual work is wanted. This allows to deploy application across various heterogeneous environments used in the development process including the final production environment automatedly. In these days there is an interest in virtualization which allow to create the expected environments easy and simple putting together these virtualized environments.\\
+
+If the application meets all standards and criteria it is deployable. Deploying the application into the production signify carefulness you have to pay special attention to. There always was, is and still will be a chance of failure, due to this fact a failure of application deployment requires a rollback. This rollback provide a certain decrease of difficulties about the deployment. Automated deployment, tied into good CI discipline, is essential to making this work \cite{MartinFowler}.
 
 %=====================================================================================
 \section{Code Review}
