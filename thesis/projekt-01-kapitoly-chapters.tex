@@ -144,10 +144,27 @@ By using CI practice, the risks as software corruption and integration problems 
     \label{fig:integration}
 \end{figure}
 
-Prevention against any type of error in a CI is solved via integration build performed on a CI server. Predicting the result of build has drawn the interest of academia and industry \cite{ResultsOfCIbuild}. In term of build result analysis and prediction, most existing studies focused mainly on large software project developed and maintained by big companies \cite{ResultsOfCIbuild}. Travis CI community has created a TravisTorrent\footnote{The name of TravisTorrent was chosen to resemble the close proximity to the GHTorrent project \cite{TravisTorrentWEBPAGE}.} \cite{TravisTorrent} for the purpose of providing a huge amount of information about the builds for full-stack research on continuous integration which is still a developed prototype. Alongside the TravisTorrent, the GitHub company has provided information about the data inside of their version control system in a project called \uv{The GHTorrent project}\footnote{The name signifies a torrent of data coming from GitHub \cite{GHTorrentWEBPAGE}.} \cite{GHTorrent}. Based on these given informations as an open dataset, a few analysis were conducted on them resolving the CI practice in a real life developed projects. The best practices were established on the results of the empirical studies of these obtained data sets provided by many of associations.
+Prevention against any type of error in a CI is solved via integration build performed on a CI server. Predicting the result of build has drawn the interest of academia and industry \cite{ResultsOfCIbuild}. In term of build result analysis and prediction, most existing studies focused mainly on large software project developed and maintained by big companies \cite{ResultsOfCIbuild}. Travis CI community has created a TravisTorrent\footnote{The name of TravisTorrent was chosen to resemble the close proximity to the GHTorrent project \cite{TravisTorrentWEBPAGE}.} \cite{TravisTorrent} for the purpose of providing a huge amount of information about the builds for full-stack research on continuous integration which is still a developed prototype. Alongside the TravisTorrent, the GitHub company has provided information about the data inside of their version control system in a project called \uv{The GHTorrent project}\footnote{The name signifies a torrent of data coming from GitHub \cite{GHTorrentWEBPAGE}.} \cite{GHTorrent}. Based on these given informations as an open dataset, a few analysis were conducted on them resolving the CI practice in a real life developed projects. The best practices were established on the results of the empirical studies of these obtained data sets provided by many of associations.\\
 
-\hfill\\
-{\color{red}TODO: Research diagrams / results}
+Studies about the CI were facing against difficult analysis due to inaccessibility of the project's data such as projects of private companies. Due to this, the observations are related to projects mainly hosted on GitHub and predominantly using Travis CI. Informations received from these observations are impressive and they point to the popularizing usage of the CI or promoting CI adoption in projects nowadays. Continuous integration is emerging as one of the biggest success stories in automated software engineering \cite{COPE}.\\
+
+The most interesting question is that how many projects are using the CI at all? In year 2016, an empirical study stated 40\% \cite{COPE} of the projects, observed by them, are using CI practice. Despite of this result, they noted that the number is still in grow and it will be still growing more intensively. While CI is widely used in practice nowadays, we predict that in the future, CI adoption rates will increase even further \cite{COPE}. The results are shown in the Table \ref{table:CI_usage}.\\
+
+\begin{table}[H]
+    \centering
+    \caption{Usage of CI in projects \cite{COPE}.}
+    \label{table:CI_usage}
+    \begin{tabular}{lrr}
+        \hline
+        Projects Uses CI? & Percentage & Number of Projects \\
+        \hline
+        Yes               & 40.27\%    & 13,910             \\
+        No                & 59.37\%    & 20,634             \\
+        \hline
+    \end{tabular}
+\end{table}
+
+The adoption of the CI to the project may depend in many of factors which includes, for example, familiarity developers with the CI which is the main factor. The median time for CI adoption is one year \cite{COPE}. The basic reason of putting the CI into the development is due to bugs and error reduction, but there is still a possibility to a bug or error incursion into production. As Martin Folwer said \uv{Continuous Integrations doesn't get rid of bugs, but it does make them dramatically easier to find and remove.} \cite{MartinFowler}.
 
 %=====================================================================================
 \subsection{Best Practices of Continuous Integration}
@@ -179,12 +196,12 @@ The stumbling block of the CI practice is the duration time of build. Because th
 
 \begin{figure}[H]
     \centering
-    \begin{tikzpicture}[scale=0.6]
+    \begin{tikzpicture}[scale=0.5]
         \node[] (i) at (0, 0) {};
         \node[] (l) at (10, 10) {};
 
         \node[label={[align=center,rotate=90]Length and complexity\\of build}] (left_text) at (0, 5) {};
-        \node[label={[align=center]Comprehensivness\\of testing}] (right_text) at (4.8, -2.1) {};
+        \node[label={[align=center]Comprehensivness\\of testing}] (right_text) at (4.8, -2.4) {};
 
         \draw[draw=black, thick, <-] (10, 0) -- (0, 0);
         \draw[draw=black, thick, ->] (0, 0) -- (0, 10);
