@@ -143,6 +143,19 @@ By using CI practice, the risks as software corruption and integration problems 
     \label{fig:integration}
 \end{figure}
 
+%==================================================================================================================
+% BEGIN - TODO SECTION
+
+% https://tex.stackexchange.com/questions/53377/inspirational-quote-at-start-of-chapter
+
+{\color{red}TODO: adjust the quote style below, check the citation place}
+
+\textit{\uv{Not integrating continuously is expensive. If you don’t follow a continuous approach, you’ll have longer periods between integrations. This makes it exponentially more difficult to find and fix problems. Such integration problems can easily knock a project off-schedule, or cause it to fail altogether.}}
+\hfill ThoughtWorks$^{\tiny{\textregistered}}$ \cite{ThoughtWorks}\\
+
+% END - TODO SECTION
+%==================================================================================================================
+
 Prevention against any type of error in a CI is solved via integration build performed on a CI server. Predicting the result of build has drawn the interest of academia and industry \cite{ResultsOfCIbuild}. In term of build result analysis and prediction, most existing studies focused mainly on large software project developed and maintained by big companies \cite{ResultsOfCIbuild}. Travis CI community has created a TravisTorrent\footnote{The name of TravisTorrent was chosen to resemble the close proximity to the GHTorrent project \cite{TravisTorrentWEBPAGE}.} \cite{TravisTorrent} for the purpose of providing a huge amount of information about the builds for full-stack research on continuous integration which is still a developed prototype. Alongside the TravisTorrent, the GitHub company has provided information about the data inside of their version control system in a project called \uv{The GHTorrent project}\footnote{The name signifies a torrent of data coming from GitHub \cite{GHTorrentWEBPAGE}.} \cite{GHTorrent}. Based on these given informations as an open dataset, a few analysis were conducted on them resolving the CI practice in a real life developed projects. The best practices were established on the results of the empirical studies of these obtained data sets provided by many of associations.\\
 
 Studies about the CI were facing against difficult analysis due to inaccessibility of the project's data such as projects of private companies. Due to this, the observations are related to projects mainly hosted on GitHub and predominantly using Travis CI. Informations received from these observations are impressive and they point to the popularizing usage of the CI or promoting CI adoption in projects nowadays. Continuous integration is emerging as one of the biggest success stories in automated software engineering \cite{COPE}.\\
@@ -252,13 +265,15 @@ Usage of this practice is reflected on the quality of the source code which is r
     \label{fig:review_process}
 \end{figure}
 
-{\color{red}TODO\{process description\}}
+Code review always starts with a request for a review of some patch which is a modification of the actual source code. This patch is reviewed by somebody who has knowledge about this field or it is related to his field in which he is. The reviewer may approve this patch which leads to a merge of patch into the actual source code in the repository - the project code base, or he may request for a fix from the author. This request for a fix does not mean that the patch is impaired, it will enhance the patch instead of patch degradation. After a fix request the process is repeated until an approval. This process in non automated because of it is done by a person or a group of people. In an agile development a thought has arisen which tried to automate this process.
 
 %=====================================================================================
 \subsection{Types of Code Review}
 %=====================================================================================
 
-Abcd.
+There are many of code review types depending from the aspect, view and the review provider. Code review types can be also {\color{red}xxx} or automated. The {\color{red}xxx} is {\color{red}yyy}. The automated code review is based on a predefined set of rules which are checked by a software whether the conditions are met or not.\\
+
+{\color{red}TODO: phrase for <non automated code review>}
 
 %=====================================================================================
 \subsection{Automated Code Review}
@@ -310,6 +325,12 @@ Abcd.
 
 %=====================================================================================
 \section{Pronto}
+%=====================================================================================
+
+Abcd.
+
+%=====================================================================================
+\section{Request for a Pull Request Review}
 %=====================================================================================
 
 Abcd.
