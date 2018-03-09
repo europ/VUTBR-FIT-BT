@@ -240,7 +240,7 @@ If the application meets all standards and criteria it is deployable. Deploying 
 %=====================================================================================
 %=====================================================================================
 
-{\color{red}TODO: intro}
+Development has adopted code review practice a long time ago. Nowadays, it is an ordinary well-known practice which influences the overall code quality. Reviewing the source code is a complement to other quality mechanisms, such as compiling, integrating and testing \cite{CodeReview_types}. This practice rests in idea of revising others work by others which points to collaboration on the same code by multiple people, especially co-workers. Today, this practice has been influenced by a lot of development practices and habits which lead the code review into a development progress. An idea has arisen to automate this process which should speed it up due to its time costs. The practice has been successfully automated but it is not fine-tuned already. There are many suggestions how to improve the code review quality and speed which cause code review more effective. The next sections describe code review, its types and how it is deployed in today's software development.
 
 %=====================================================================================
 \section{Code Review}
@@ -249,7 +249,7 @@ If the application meets all standards and criteria it is deployable. Deploying 
 Code review is a substantial part of the development which improve the source code quality markedly. The importance of the code review lies in the code enhancement that is significant towards not reviewed code. Code quality is made by imperfection reduction. Analysis of the code by someone else than the author who has a different type of view on the code may result in an imperfection detection. The reviewer, who is not the author of the code, can be a person or a software. This reviewer type division involves two types of code reviewing - the automated code review and the non automated review which is done by a developer. Human is irreplaceable by a machine but machines do not do mistakes. This is the reason why the development process includes the both type of code review. Automated code review functionality is supported in many of IDEs which informs the developer about the vulnerability in real time. This feature may involve static code analyzing tools which provide an extremely fast feedback. Rigby and Bird (2013) find that current software inspection practices tend to converge on Modern Code Review (MCR) \cite{review_participation}. The non automated code review also known as manual code review done by a person via some code review tool. The person is usually a project member who has to known at least the fundamentals about the code which he has to review. Review ends with a code criticism which should be taken by an author positively because of it enhances his code not degrades it. Software code review is a well-established software quality practice \cite{review_participation}. Code review can improve the quality of software products by identifying weaknesses in changes early in the development cycle (Fagan 1999; Shull et al. 2002) \cite{review_participation}.
 
 %=====================================================================================
-\section{Principle of Code Review}
+\section{Principle of Code Review}\label{fig:sec_pri_CR}
 %=====================================================================================
 
 The resulting work of a person normally involves deficiencies and faults because of the imperfection of people. The amount of imperfections depends on the skills and the experiences of an individual but they are still not removed completely. To catch the rests of non-caught vulnerabilities require to examine the work, the source code in case of development, by collaborators or project members. The examination of the work result is called in the development as a code review. To understand what is a code review or source code review there are different type of definitions.
@@ -271,21 +271,25 @@ Usage of this practice is reflected on the quality of the source code which is r
     \label{fig:review_process}
 \end{figure}
 
-Code review always starts with a request for a review of some patch which is a modification of the actual source code. This patch is reviewed by somebody who has knowledge about this field or it is related to his field. The reviewer may approve this patch which leads to a merge of the patch into the actual source code in the repository - the project code base, or he may request for a fix from the author. This request for a fix does not mean that the patch is impaired, it will enhance the patch instead of patch degradation. After a fix request, the process is repeated until an approval. This process in non-automated because it is done by a person or a group of people. In an agile development, a thought has arisen which tried to automate this process.
+Code review always starts with a request for a review of some patch which is a modification of the actual source code. This patch is reviewed by somebody who has knowledge about this field or it is related to his field. The reviewer may approve this patch which leads to a merge of the patch into the actual source code in the repository - the project code base, or he may request for a fix from the author. This request for a fix does not mean that the patch is impaired, it will enhance the patch instead of patch degradation. After a fix request, the process is repeated until an approval. This process in non-automated, also called manual, because it is done by a person or a group of people. In an agile development, a thought has arisen which tried to automate this process.
 
 %=====================================================================================
 \section{Types of Code Review}
 %=====================================================================================
 
-There are many of code review types depending on the aspect, view and the review provider. Code review types can be also {\color{red}xxx} or automated. The {\color{red}xxx} is {\color{red}yyy}. The automated code review is based on a predefined set of rules which are checked by a software whether the conditions are met or not.\\
+There are many of code review types depending on the aspect, view and the review provider. Code review is divided into two basic types such as manual or automated. The reason of this division rests in the reviewer type. The reviewer may be a person who has to review the whole code or a software which processes the code according to the predefined set of rules.\\
 
-{\color{red}TODO: phrase for <non automated code review>}
+The manual code review is a code examination on others work provided by a person. This type of review was described in section \ref{fig:sec_pri_CR} and shown in Figure \ref{fig:review_process} what constitutes the basis of this practice. The difference to automated code review is the fact, that the manual code review includes a human person who has to give the review judgment - the approval or a request for a change.\\
+
+To automate this practice, it is necessary to have a definition of project-specific rules. The automated code review is based on a predefined set of rules which are checked by a software whether the conditions are met or not. Matching these rules is provided via software which includes static analysis tools for this operation. As manual code review includes at least one person, the automated code review includes a static analysis tool which represents the person an performs his job in the code review. Static analysis tools for automated code review are the most effective \cite{CodeReview_security}. This automation is only refinement of manual code review due to its duration.\\
+
+Nowadays developments usually make use of both approaches. The major cause is to catch as many deficiencies as possible to reduce the insufficiency of the software product and increase its overall quality. Manual review is such a pain that reviewers regularly suffer from the \uv{get done, go home} phenomenon - starting strong and ending with a sputter \cite{CodeReview_security}. This factor may be circumvented with automated code review but it has its deficiency too because it is limited by the rules count. It cannot catch defects which are not defined the the set of rules. These two fundamental reasons lead the development to adopt both types of code review.
 
 %=====================================================================================
 \section{Automated Code Review}
 %=====================================================================================
 
-Abcd.
+History: ITS4 was the first automated code review tool.
 
 %=====================================================================================
 %=====================================================================================
