@@ -345,16 +345,18 @@ Abcd.
 Abcd. \url{https://lwn.net/Articles/680060/}
 
 %=====================================================================================
+%=====================================================================================
 \chapter{Implementation}
 %=====================================================================================
+%=====================================================================================
 
-Chapter introduction.
+The fundamentals of the implementation part of this thesis were established on shortcomings of the ManageIQ Bot \cite{MIQBOT}. A list of missing needs of the bot were created by the developers and more important of them were chosen to be implemented. The goal of the tasks was to reduce these shortcomings by implementing and adding them into the currently working bot. Besides of the implementations of bot's missing features there were a plenty of problems and issues as side effect which had to be resolved as fast as possible. The result of the features may help to the developers with a little increase of team agility and simplifying some of their needs targeted on the bot. I hope and believe that these added features will help to the developers in their daily work. Some of the features are added yet, but some of them are still not added yet because they are waiting for their pull request merge or approval.
 
 %=====================================================================================
 \section{ManageIQ Bot}
 %=====================================================================================
 
-Related repository: \url{https://github.com/ManageIQ/miq_bot}.
+The ManageIQ bot is the ManageIQ team's helper to automate various developer problems \cite{MIQBOT}. The automation of these manually provided tasks by developers increased the team agility because of time saving for major tasks. In addition, this bot reacts on specific commands used by the project members on which he perform a desired action. The bot's core is based on Sidekiq\footnote{\url{https://github.com/mperham/sidekiq}} which is a simple background processing for ruby. Due to the fact that the bot is not using GitHub's Webhooks\footnote{\url{https://developer.github.com/webhooks}} he is configured to use a polling method. The polling method rests in a specific content downloading via GitHub's REST API v3\footnote{\url{https://developer.github.com/v3/}}.
 
 %=====================================================================================
 \section{Pronto integration}
