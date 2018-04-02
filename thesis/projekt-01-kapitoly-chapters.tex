@@ -359,14 +359,23 @@ The fundamentals of the implementation part of this thesis were established on d
 The ManageIQ bot is the ManageIQ team's helper to automate various developer problems \cite{MIQBOT}. The automation of these manually provided tasks by developers increased the team agility because of time saving for major tasks. In addition, this bot reacts on specific commands used by the project members on which he perform a desired action. The bot's core is based on Sidekiq\footnote{\url{https://github.com/mperham/sidekiq}} which is a simple background processing for ruby. Due to the fact that the bot is not using GitHub's Webhooks\footnote{\url{https://developer.github.com/webhooks}} he is configured to use a polling method instead. The polling method rests in a specific content downloading repetitively via GitHub's REST API v3\footnote{\url{https://developer.github.com/v3}} over HTTPS. The downloaded content contains JSON data from which are the necessary informations extracted and on their basis an action or multiple actions are performed. Some of the bot's actions results in a GitHub actions such as posting a comment, adding a label or milestone that are using HTTP requests via the mentioned REST API v3. These actions are used to facilitate the manual tasks resulting in a complete elimination of them from the developer's tasks.
 
 %=====================================================================================
-\section{Pronto integration}
+\section{Pronto}
 %=====================================================================================
 
-The Pronto \cite{PRONTO} integration was necessary due to the unification of the output of multiple static code review services. Pronto provide a quick automated code review by analysis of the relevant changes with the related static analysis tool to the source code. The main advantage is that is has its own formatters which are very useful. If the output is desired to be formatted for GitHub, BitBucket, GitLab or any other supported format than the built in formatter provide this expected feature. The format type - pull request, pull request review, etc., is also supported. The result of formatters is configurable via configuration file which define the desired format of the produced message. Henceforth, Pronto is able to run multiple different static code analyzing tools which are united under Pronto. They are united because only one output is expected with a summary of the analysis results.\\
+Pronto is a tool that provides an automated code review over new changes in a git branch \cite{PRONTO-1}. It is typically used in continuous integration as a way to provide feedback on a pull/merge request \cite{PRONTO-1}.\\
 
-To unite these various tools, Pronto had encapsulated every single tool into a Pronto plugin - a Pronto runner. This runner represents a middle layer between the Pronto application and the tool - the static code analyzing tool. The encapsulation facilitates the unification of these tools at the end of the source code analysis process. 
+The Pronto \cite{GITHUB-PRONTO} integration was necessary due to the unification of the output of multiple static code review services. Pronto provide a quick automated code review by analysis of the relevant changes with the related static analysis tool to the source code. The main advantage is that is has its own formatters which are very useful. If the output is desired to be formatted for GitHub, BitBucket, GitLab or any other supported format than the built in formatter provide this expected feature. The format type - pull request, pull request review, etc., is also supported. The result of formatters is configurable via configuration file which define the desired format of the produced message. Henceforth, Pronto is able to run multiple different static code analyzing tools which are united under Pronto. They are united because only one output is expected with a summary of the analysis results.\\
 
-%Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.
+To unite these various tools, Pronto had encapsulated every single tool into a Pronto plugin - a Pronto runner. This runner represents a middle layer between the Pronto application and the tool - the static code analyzing tool. The encapsulation facilitates the unification of these tools at the end of the source code analysis process. The pronto runner provide an automated code review for a specific programming language by the corresponding linter.
+
+\subsection{Issues}
+
+During the integration process, a few of problems were discovered which had to be solved. The main issue of this integration was a pattern matching of the pronto output with the original output of the code review. This integration required to create exactly the same data structure from the pronto result as the original data structure was because of further use.
+
+\subsection{Integration}
+
+Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.
+
 
 %=====================================================================================
 \section{Request for a Pull Request Review}
