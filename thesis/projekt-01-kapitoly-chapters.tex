@@ -192,7 +192,7 @@ The continuous integration is used in agile software development where a huge co
 
 \subsection{Do not Commit a Broken Code}
 
-Broken code is a code that contains any type of failure when it is included in a CI build \cite{CIQualityFramework}. As a prevention against committing a broken code to the shared code repository there is an opportunity to run a private build on a developer's machine before each commit. A private build detects the the simplest mistakes such as a syntactic error or any other error forgotten in the code which are easy to detect. To reduce the plain error inside of the committing code, developer may use a code linter, if a developer uses an IDE\footnote{Integrated Development Environment}, it may has a build in linter. Code linting is a process of running a program which provide a code analysis for potential errors. Some of these basic errors are not detected by the linter so this is the reason why a developer should launch a private build before every single change he would like to commit. A private build may include a simple test set to detect these potential errors and defects in a created change. To commit a non broken code stands for to run a private build on a developer's local machine before committing his changes. This circumvention may accelerate the change integration.
+Broken code is a code that contains any type of failure when it is included in a CI build \cite{CIQualityFramework}. As a prevention against committing a broken code to the shared code repository there is an opportunity to run a private build on a developer's machine before each commit. A private build detects the the simplest mistakes such as a syntactic error or any other error forgotten in the code which are easy to detect. To reduce the plain error inside of the committing code, developer may use a code linter, if a developer uses an IDE\footnote{Integrated Development Environment}, it may has a build in the linter. Code linting is a process of running a program which provide a code analysis for potential errors. Some of these basic errors are not detected by the linter so this is the reason why a developer should launch a private build before every single change he would like to commit. A private build may include a simple test set to detect these potential errors and defects in a created change. To commit a non broken code stands for to run a private build on a developer's local machine before committing his changes. This circumvention may accelerate the change integration.
 
 \subsection{Fix Broken Builds Immediately}
 
@@ -232,7 +232,7 @@ during build. These informations about the build status should be easy to obtain
 
 Automating deployment helps to reduce waste \cite{CollabNet}. Automated deployment is nearly adherent to release automation. An essential part of releasing a software product is deploying it, first on development environments, then on QA\footnote{Quality Assurance} and UAT\footnote{User Acceptance Testing} environments, and finally on the real production environment, either on the developing organization's premises, on a customer's premises or on the cloud \cite{deployment_automation}. The usage of the CI required multiple development environments. It comes to this, that you have to move the binaries between multiple environments what follows to create scripts if no manual work is wanted. This allows to deploy application across various heterogeneous environments used in the development process including the final production environment automatedly. In these days, there is an interest in virtualization which allows to create the expected environments easy and simple putting together these virtualized environments.\\
 
-If the application meets all standards and criteria it is deployable. Deploying the application into the production signify carefulness you have to pay special attention to. There always was, is and still will be a chance of a failure, due to this fact a failure of application deployment requires a rollback. This rollback provides a certain decrease of difficulties about the deployment. Automated deployment, tied into good CI discipline, is essential to make this work \cite{MartinFowler}.
+{\color{red}\textbf{If the application meets all standards and criteria it is deployable. Deploying the application into the production signify carefulness you have to pay special attention to.}} There always was, is and still will be a chance of a failure, due to this fact a failure of application deployment requires a rollback. This rollback provides a certain decrease of difficulties about the deployment. Automated deployment, tied into good CI discipline, is essential to make this work \cite{MartinFowler}.
 
 %=====================================================================================
 %=====================================================================================
@@ -312,37 +312,37 @@ This type of code review is oftentimes used besides a CI practice in which it ha
 %=====================================================================================
 %=====================================================================================
 
-Chapter introduction.
+{\color{red}\textbf{TODO}}
 
 %=====================================================================================
 \section{Open Source}
 %=====================================================================================
 
-Abcd.
+{\color{red}\textbf{TODO}}
 
 %=====================================================================================
 \section{Red Hat, Inc}
 %=====================================================================================
 
-Abcd.
+{\color{red}\textbf{TODO}}
 
 %=====================================================================================
 \section{Github}
 %=====================================================================================
 
-Abcd.
+{\color{red}\textbf{TODO}}
 
 %=====================================================================================
 \section{TravisCI}
 %=====================================================================================
 
-Abcd.
+{\color{red}\textbf{TODO}}
 
 %=====================================================================================
 \section{ManageIQ}
 %=====================================================================================
 
-Abcd. \url{https://lwn.net/Articles/680060/}
+{\color{red}\textbf{TODO}} \url{https://lwn.net/Articles/680060/}
 
 %=====================================================================================
 %=====================================================================================
@@ -364,39 +364,42 @@ The ManageIQ bot is the ManageIQ team's helper to automate various developer pro
 
 Pronto is a tool that provides an automated code review over new changes in a git branch \cite{PRONTO-1}. It is typically used in continuous integration as a way to provide feedback on a pull/merge request \cite{PRONTO-1}.\\
 
-The Pronto \cite{GITHUB-PRONTO} integration was necessary due to the unification of the output of multiple static code review services. Pronto provide a quick automated code review by analysis of the relevant changes with the related static analysis tool to the source code. The main advantage is that is has its own formatters which are very useful. If the output is desired to be formatted for GitHub, BitBucket, GitLab or any other supported format than the built in formatter provide this expected feature. The format type - pull request, pull request review, etc., is also supported. The result of formatters is configurable via configuration file which define the desired format of the produced message. Henceforth, Pronto is able to run multiple different static code analyzing tools which are united under Pronto. They are united because only one output is expected with a summary of the analysis results.\\
+The Pronto \cite{GITHUB-PRONTO} integration was necessary due to the unification of the output of multiple static code review services. Pronto provide a quick automated code review by analysis of the relevant changes with the related static analysis tool to the source code. The main advantage is that it has its own formatters which are very useful. If the output is desired to be formatted for GitHub, BitBucket, GitLab or any other supported format than the built in formatter provide this expected feature. The format type - pull request, pull request review, etc., is also supported. The result of formatters is configurable via configuration file which define the desired format of the produced message. Henceforth, Pronto is able to run multiple different static code analyzing tools which are united under Pronto. They are united because of only one output is expected with a summary of the analysis results.\\
 
-To unite these various tools, Pronto had encapsulated every single tool into a Pronto plugin - a Pronto runner. This runner represents a middle layer between the Pronto application and the tool - the static code analyzing tool. The encapsulation facilitates the unification of these tools at the end of the source code analysis process. The pronto runner provide an automated code review for a specific programming language by the corresponding linter.
+To unite these various tools, Pronto had encapsulated every single tool into a Pronto plugin - a Pronto runner. This runner represents a middle layer between the Pronto application and the tool - the static code analyzing tool. The encapsulation facilitates the unification of these tools at the end of the source code analysis process. The pronto runner provide an automated code review for a specific programming language by the corresponding linter. This linter union was a great simplification of running all expected linters together.
 
 \subsection{Issues}
 
-During the integration process, a few of problems were discovered which had to be solved. The main issue of this integration was a pattern matching of the pronto output with the original output of the code review. This integration required to create exactly the same data structure from the pronto result as the original data structure was because of further use.
+During the integration process, a few of problems were discovered which had to be resolved. The main issue of this integration was a pattern matching of the pronto output with the original output of the code review. This integration required to create exactly the same data structure from the pronto result as the original data structure was because of further use in the bot - compatibility with the original structure of the results. Furthermore, a bug has been found during the testing of pronto. A pronto runner does not include an offense about a syntax error. This type of offense was detected by linter but the encapsulation of this linter into the runner caused that this offense was threw away.
 
 \subsection{Integration}
 
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.
+The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line.
 
+
+
+\hfill\\
+{\color{red}\textbf{TODO}}\\
+Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.\\
+Expected linters have to be specified only in gemfile by using the corresponding gems for the pronto runners responsible for the linters.
 
 %=====================================================================================
-\section{Request for a Pull Request Review}
+\section{Pull Request Review Commands}
 %=====================================================================================
 
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/408}.
-
-%=====================================================================================
-\section{Remove a Request for a Pull Request Review}
-%=====================================================================================
-
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/411}.
+{\color{red}\textbf{TODO}}\\
+Related pull request (ADD reviewer): \url{https://github.com/ManageIQ/miq_bot/pull/408}.
+Related pull request (RM. reviewer): \url{https://github.com/ManageIQ/miq_bot/pull/411}.
 
 %=====================================================================================
 \section{GitHub Status API integration}
 %=====================================================================================
 
+{\color{red}\textbf{TODO}}\\
 Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/412}.
 
 %=====================================================================================
 \chapter{Conclusion}
 %=====================================================================================
 
-Conclusion.
+{\color{red}\textbf{TODO}}\\
