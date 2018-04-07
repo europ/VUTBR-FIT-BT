@@ -370,18 +370,65 @@ To unite these various tools, Pronto had encapsulated every single tool into a P
 
 \subsection{Issues}
 
-During the integration process, a few of problems were discovered which had to be resolved. The main issue of this integration was a pattern matching of the pronto output with the original output of the code review. This integration required to create exactly the same data structure from the pronto result as the original data structure was because of further use in the bot - compatibility with the original structure of the results. Furthermore, a bug has been found during the testing of pronto. A pronto runner does not include an offense about a syntax error. This type of offense was detected by linter but the encapsulation of this linter into the runner caused that this offense was threw away.
+During the integration process, a few of problems were discovered which had to be resolved. The main issue of this integration was a pattern matching of the pronto output with the original output of the code reviewing part. This integration required to create exactly the same data structure from the pronto result as the original data structure was because of further use in the bot - compatibility with the original structure of the results. Furthermore, a bug has been found during the testing of pronto. A pronto runner does not include an offense about a syntax error. This type of offense was detected by linter but the encapsulation of this linter into the runner caused that this offense was threw away.
 
 \subsection{Integration}
 
-The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line.
+The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line. An example of a single pronto-message is shown in Figure \ref{fig:pronto_message}.
 
+\begin{figure}[H]
+\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.16\textwidth]
+#<Pronto::Message:0x000056452d8dcef8
+ @commit_sha="1d4e09dc52421b8adeab39f37728aca95a4fc462",
+ @level=:warning,
+ @line=
+  #<struct Pronto::Git::Line
+   line=
+    #<Rugged::Diff::Line:47427558500720
+    {line_origin: :addition, content: "puts 'Hello' \n">,
+   patch=
+    #<struct Pronto::Git::Patch
+     patch=#<Rugged::Patch:47427542553580>,
+     repo=
+      #<Pronto::Git::Repository:0x000056452b969698
+       @repo=
+        #<Rugged::Repository:47427542010600
+        {path: "/tmp/d20180323-13013-1lkcejq/.git/"}>>>,
+   hunk=
+    #<Rugged::Diff::Hunk:47427558501220
+    {header: "@@ -0,0 +1 @@\n", count: 1}>>,
+ @msg="Layout/TrailingWhitespace: Trailing whitespace detected.",
+ @path="space.rb",
+ @runner=Pronto::Rubocop>
+\end{lstlisting}
+\hfill\\[-3em]
+\caption{Example of Pronto::Message object.}
+\label{fig:pronto_message}
+\end{figure}
 
+After obtaining the pronto result in form of an array of pronto-message objects the creation of the identical data structure which has to match the pattern of the original data structure can begun. Originally the linters were run sequentially while their results were appended into an array which is shown in Figure \ref{fig:run_all_linters}. The result was a data structure including structures about the detected offenses belonging to the specific files sorted by linters. This type of liters lauching is via Pronto much more easier because of the developers have to specify only the gem in the gemfile and there is no need to change a large amount of source code. A Gemfile describes the gem dependencies required to execute associated Ruby code \cite{Gemfile}. Expected linters have to be specified only in gemfile by using the corresponding gems for the pronto runners responsible for the linters.
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.2\textwidth]
+unmerged_results = []
+unmerged_results << Linter::Rubocop.new(branch).run
+unmerged_results << Linter::Haml.new(branch).run
+unmerged_results << Linter::Yaml.new(branch).run
+unmerged_results.tap(&:compact!)
+\end{lstlisting}
+\hfill\\[-3em]
+\caption{Example of linters launch.}
+\label{fig:run_all_linters}
+\end{figure}
+
+The example shown in Figure \ref{fig:run_all_linters} is a function body which was completely replaced. In order to maintain the same functionality, a converter was created which replaced this function body. This changed function works on the principle of retrieving the pronto result it converts to the same structure as the original was. The pronto result is obtained via a function which creates a temporary folder in which is the branch content copied, fetched, analyzed and the patches describing the changes are passed to the pronto which runs the pronto runners resulting in an array of pronto-messages.\\
+
+Except the pronto integration a bug had to be fixed in the pronto runner for Rubocop. After code analysis by this runner the runner does not return a detected offense in the source code describing the syntactical error.
 
 \hfill\\
 {\color{red}\textbf{TODO}}\\
 Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.\\
-Expected linters have to be specified only in gemfile by using the corresponding gems for the pronto runners responsible for the linters.
+
 
 %=====================================================================================
 \section{Pull Request Review Commands}
