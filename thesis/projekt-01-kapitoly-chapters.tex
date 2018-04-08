@@ -377,7 +377,7 @@ During the integration process, a few of problems were discovered which had to b
 The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line. An example of a single pronto-message is shown in Figure \ref{fig:pronto_message}.
 
 \begin{figure}[H]
-\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.16\textwidth]
+\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.13\textwidth]
 #<Pronto::Message:0x000056452d8dcef8
  @commit_sha="1d4e09dc52421b8adeab39f37728aca95a4fc462",
  @level=:warning,
@@ -421,9 +421,36 @@ unmerged_results.tap(&:compact!)
 \label{fig:run_all_linters}
 \end{figure}
 
-The example shown in Figure \ref{fig:run_all_linters} is a function body which was completely replaced. In order to maintain the same functionality, a converter was created which replaced this function body. This changed function works on the principle of retrieving the pronto result it converts to the same structure as the original was. The pronto result is obtained via a function which creates a temporary folder in which is the branch content copied, fetched, analyzed and the patches describing the changes are passed to the pronto which runs the pronto runners resulting in an array of pronto-messages.\\
+The example shown in Figure \ref{fig:run_all_linters} is a function body which was completely replaced. In order to maintain the same functionality, a converter was created which replaced this function body. This changed function works on the principle of retrieving the pronto result it converts to the same structure as the original was. The pronto result is obtained via a function which creates a temporary folder in which is the branch content copied, fetched, analyzed and the patches describing the changes are passed to the pronto which runs the pronto runners resulting in an array of pronto-messages. This array is iterated over and its content of pronto-message objects from which are the necessary informations extracted, is mapped to the structure describing the original one. The informations describing the linter and the platform were not added to the results as it originally was because of they were not applicable. The method of linters launching shown in Figure \ref{fig:run_all_linters} was completely redesigned and simplified. The result of pronto integration is a linter unification that guarantees triggering of different linters which have to specified only in the gemfile.\\
 
-Except the pronto integration a bug had to be fixed in the pronto runner for Rubocop. After code analysis by this runner the runner does not return a detected offense in the source code describing the syntactical error.
+Except the pronto integration a bug was detected and it had to be fixed in the pronto runner for RuboCop. After code analysis by this RuboCop runner, the runner does not return a detected offense in the source code describing the syntactical error. The syntactical error was detected by the RuboCop as an offense, see Figure \ref{fig:syntax_offense}, but it was not mapped to the final result of its runner.
+
+\begin{figure}[H]
+\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.06\textwidth]
+#<RuboCop::Cop::Offense:0x00007fc750319218
+ @cop_name="Lint/Syntax",
+ @location=
+  #<Parser::Source::Range /tmp/d20180324-16231-1bppist/syntax.rb 101...101>,
+ @message=
+  "Lint/Syntax: unexpected token $end\n(Using Ruby 2.3 parser; confi" \
+  "gure using `TargetRubyVersion` parameter, under `AllCops`)",
+ @severity=#<RuboCop::Cop::Severity:0x00007fc7503191f0 @name=:error>,
+ @status=:unsupported>
+\end{lstlisting}  
+\hfill\\[-3em]
+\caption{Example of offense related to syntactical error.}
+\label{fig:syntax_offense}
+\end{figure}
+
+The fact that the error is not reflected in the result was solved via additional inspection of the offenses. Firstly, the offenses are selected by the patch line where is the line number of the added patch matched with the line number of the offense, if they match then the offense is selected. This was the reason why does the pronto runner for RuboCop dropped the offense about the syntactical error. At selection the number of the offense line was excluded in the line numbers of patch. Due to syntactical error the offense's line number was a number given by ruby parser which was not adequate to the numbers of added lines in patch. These offenses are added additionally at checking the offenses secondly looking only for the syntactical errors. If there is any syntactical offense, it is detected in the second phase of offense mapping by the cop name which include information about the syntax error, and its added to the result as an offense detected on the last patch line.
+
+\subsection{Enhancements {\color{red}\textbf{TODO asi zly nazov}}}
+
+{\color{red}\textbf{TODO}} Something about the review of this PR.\\[-2em]
+\begin{itemize}
+\item deadcode removed\\[-2em]
+\item column-length removed, line number preserved
+\end{itemize}
 
 \hfill\\
 {\color{red}\textbf{TODO}}\\
