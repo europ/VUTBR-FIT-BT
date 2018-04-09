@@ -442,9 +442,15 @@ Except the pronto integration a bug was detected and it had to be fixed in the p
 \label{fig:syntax_offense}
 \end{figure}
 
+{\color{red}\textbf{`make normostrany` fails here, the code above contains \$ which stops the detex at this point, the text behind the \$ is ignored to the end}}\\
+
 The fact that the error is not reflected in the result was solved via additional inspection of the offenses. Firstly, the offenses are selected by the patch line where is the line number of the added patch matched with the line number of the offense, if they match then the offense is selected. This was the reason why does the pronto runner for RuboCop dropped the offense about the syntactical error. At selection the number of the offense line was excluded in the line numbers of patch. Due to syntactical error the offense's line number was a number given by ruby parser which was not adequate to the numbers of added lines in patch. These offenses are added additionally at checking the offenses secondly looking only for the syntactical errors. If there is any syntactical offense, it is detected in the second phase of offense mapping by the cop name which include information about the syntax error, and its added to the result as an offense detected on the last patch line.
 
 \subsection{Enhancements {\color{red}\textbf{TODO asi zly nazov}}}
+
+By using a automated build practice as an part of continuous information approach, the added source code must has its unit tests. The unit tests had been replaced with the newer one covering the actual source code which which is added. The unit test are checking the conversion from an array of pronto-messages to a data structure describing the offenses which was originally used. Some of the informations such as ruby platform, ruby version, ruby engine, etc. were obtainable from the structure's metadata. These informations were useless and they had been removed because they were not used.\\
+
+After submitting changes as an pull request, the developers had made a pull request review whose result is multiple enhancements and suggested improvements. These advices were helpful and lead the source code to better quality with many of enhancements which were suggested. First suggestion was that the developers have decided to delete unnecessary position information about the offense. Secondly, there were some of irregularities in the unit tests covering the added source code.\\
 
 {\color{red}\textbf{TODO}} Something about the review of this PR.\\[-2em]
 \begin{itemize}
