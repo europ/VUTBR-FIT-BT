@@ -373,7 +373,7 @@ During the integration process, a few of problems were discovered which had to b
 
 \subsection{Integration}
 
-The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line. An example of a single pronto-message is shown in Figure \ref{fig:pronto_message}.
+The integration process of Pronto involves implementation of pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request\footnote{\url{https://github.com/ManageIQ/miq_bot/pull/406}} by the developers. To integrate pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line. An example of a single pronto-message is shown in Figure \ref{fig:pronto_message}.
 
 \begin{figure}[H]
 \begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.13\textwidth]
@@ -422,7 +422,7 @@ unmerged_results.tap(&:compact!)
 
 The example shown in Figure \ref{fig:run_all_linters} is a function body which was completely replaced. In order to maintain the same functionality, a converter was created which replaced this function body. This changed function works on the principle of retrieving the pronto result it converts to the same structure as the original was. The pronto result is obtained via a function which creates a temporary folder in which is the branch content copied, fetched, analyzed and the patches describing the changes are passed to the pronto which runs the pronto runners resulting in an array of pronto-messages. This array is iterated over and its content of pronto-message objects from which are the necessary informations extracted, is mapped to the structure describing the original one. The informations describing the linter and the platform were not added to the results as it originally was because of they were not applicable. The method of linters launching shown in Figure \ref{fig:run_all_linters} was completely redesigned and simplified. The result of pronto integration is a linter unification that guarantees triggering of different linters which have to specified only in the gemfile.\\
 
-Except the pronto integration a bug was detected and it had to be fixed in the pronto runner for RuboCop. After code analysis by this RuboCop runner, the runner does not return a detected offense in the source code describing the syntactical error. The syntactical error was detected by the RuboCop as an offense, see Figure \ref{fig:syntax_offense}, but it was not mapped to the final result of its runner.
+Except the pronto integration a bug was detected and it had to be fixed via a pull request\footnote{\url{https://github.com/prontolabs/pronto-rubocop/pull/35}} into the pronto runner for RuboCop. After code analysis by this RuboCop runner, the runner does not return a detected offense in the source code describing the syntactical error. The syntactical error was detected by the RuboCop as an offense, see Figure \ref{fig:syntax_offense}, but it was not mapped to the final result of its runner.
 
 \begin{figure}[H]
 \begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.06\textwidth]
@@ -452,11 +452,7 @@ The fact that the error is not reflected in the result was solved via additional
 
 By using a automated build practice as an part of continuous information approach, the added source code must has its unit tests. The unit tests had been replaced with the newer one covering the actual source code which which is added. The unit test are checking the conversion from an array of pronto-messages to a data structure describing the offenses which was originally used. Some of the informations such as ruby platform, ruby version, ruby engine, etc. were obtainable from the structure's metadata. These informations were useless and they had been removed because they were not used.\\
 
-After submitting changes as an pull request, the developers had made a pull request review whose result is multiple enhancements and suggested improvements. These advices were helpful and lead the source code to better quality with many of enhancements which were suggested. First suggestion was that the developers have decided to delete unnecessary position information about the offense. The developers has stated the the offense informations such as column number and length are useless and they should be removed. Secondly, there were some of irregularities in the unit tests covering the added source code which were changed as desired. \\
-
-\hfill\\
-{\color{red}\textbf{TODO}}\\
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/406}.\\
+After submitting changes as an pull request, the developers had made a pull request review whose result is multiple enhancements and suggested improvements. These advices were helpful and lead the source code to better quality with many of enhancements which were suggested. First suggestion was that the developers have decided to delete unnecessary position information about the offense. The developers has stated the the offense informations such as column number and length are useless and they should be removed. Secondly, there were some of irregularities in the unit tests covering the added source code which were changed as desired.
 
 %=====================================================================================
 \section{Pull Request Review Commands}
@@ -470,8 +466,22 @@ Related pull request (RM. reviewer): \url{https://github.com/ManageIQ/miq_bot/pu
 \section{GitHub Status API integration}
 %=====================================================================================
 
+GitHub includes an flexible application programming interface for statuses. The status API allows external services to mark commits with an \textit{error}, \textit{failure}, \textit{pending}, or \textit{success} state, which is then reflected in pull requests involving those commits \cite{GITHUB_STATUS_API}. Statuses let you know if your commits meet the conditions set for the repository you are contributing to \cite{GITHUB_ABOUT_STATUSES}. The latest commit state is reflected in UI e.g. summary in pull request footer, which informs the developers about the latest commit - everything is fine or something went wrong. Except for the commit status, there is a specific payload with additional information which helps with supplementary informations. The status can contain besides the commit state these following optional informations such as a context to differentiate this status from others, a link to more details about this status and a short human-readable description of this status. As an example, one common use is for continuous integration services to mark commits as passing or failing builds using status \cite{GITHUB_STATUS_API}.
+
+\subsection{Issues}
+
+Delegating the commit state was solved as an optional parameter because of correct source code placement. The placement was decided with respect to separation of logically equally functioning units of the source code. The only one problem of this integration which was caused by the bot's URL obtaining which contains the description about the offenses. {\color{red}\textbf{TODO write more.}}
+
+\subsection{Integration}
+
+The implementation required to use the Octokit \cite{OCTOKIT} which is a ruby toolkit for the GitHub API. The commit state is determined based on existence of offenses. If there is any offense than the commit state will be \textit{error} otherwise \textit{success}. This state is delegated as an optional parameter via function into \textit{GithubService} module which is bot's interface to the GitHub API. A new function was added to the module where is the decision about the commit marking provided. The requirements for commit marking are established and passed to the Octokit's function \textit{create\_status} which is the ending point of this process. After this, as the result, the commit status is viewable in the GitHub's web interface. This feature was added to the ManageIQ bot via pull request\footnote{\url{https://github.com/ManageIQ/miq_bot/pull/412}}.
+
+%=====================================================================================
+\section{Branch status notification via Gitter}
+%=====================================================================================
+
 {\color{red}\textbf{TODO}}\\
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/412}.
+Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/413}.
 
 %=====================================================================================
 \chapter{Conclusion}
