@@ -458,6 +458,14 @@ After submitting changes as an pull request, the developers had made a pull requ
 \section{Pull Request Review Commands}
 %=====================================================================================
 
+The ManageIQ bot does not support a commands allowing project members to request for a pull request review or to remove a request for a pull request review. An issue\footnote{\url{https://github.com/ManageIQ/miq_bot/issues/337}} has been created describing the bot's restriction. The commands were named based on the suggestion from the developers and discussion in the issue mentioned before.
+
+\subsection{Issues}
+{\color{red}\textbf{TODO}}: octokit version problem (require to update), octokit missing method (required to implement), octokit VCR cassette (solved), fixing pull request (yolo merge - missing dependence)
+
+
+\subsection{Issues}
+
 {\color{red}\textbf{TODO}}\\
 Related pull request (ADD reviewer): \url{https://github.com/ManageIQ/miq_bot/pull/408}.
 Related pull request (RM. reviewer): \url{https://github.com/ManageIQ/miq_bot/pull/411}.
@@ -480,8 +488,14 @@ The implementation required to use the Octokit \cite{OCTOKIT} which is a ruby to
 \section{Branch status notification via Gitter}
 %=====================================================================================
 
-{\color{red}\textbf{TODO}}\\
-Related pull request: \url{https://github.com/ManageIQ/miq_bot/pull/413}.
+Gitter is a chat and networking platform that helps to manage, grow and connect communities through messaging, content and discovery \cite{GITTER}. Because of many times the developers had no idea that the branch they are operating on is broken, which lead to time consuming searching for a failure that could easily take an hours, a thought has arisen about informing the developers via Gitter if the branch has gone broken. Many times I had an opportunity to notice how the developers were upset after the update which broke their code. To not notify the wrong members of the project which is divided into parts while every part has its own room on Gitter and repository. This is a great way how to notify the attributable developers of the repository's branch state.
+
+\subsection{Issues}
+Issue of this feature implementation was located in the Travis client. To acquire the latest two states of builds of a specified repository required to download them. The client supported downloading the latest build or downloading every build returning them as an enumerable object. The latest two builds required to download the every build which was not as fast as desired. But nevertheless it was an enumerable object from which were the latest builds selected it could be transformed to lazy enumerator. The speed of the selection of the latest two builds which matches the conditions was increased by seconds.
+
+\subsection{Integration}
+
+A new self recurring Sidekiq worker was created for this implementation\footnote{\url{https://github.com/ManageIQ/miq_bot/pull/413}} which is automatically performed every ten minutes. This worker perform three basic actions - a build change status check, a corresponding message creation and a message posting, for every single branch specified in the bot's configuration file. Checking the change of build status is done using the latest two downloaded builds of the branch via Travis client\footnote{\url{https://github.com/travis-ci/travis.rb}}. From these two builds is the branch status determined based on their states. If there is change between the states in the following order - latest build and the build before latest build, is failed and passed than it is determined as broken branch. Otherwise, if the states are passed and failed than it is determined as a fixed branch. Provided that the states are equal no action is performed because it means that the branch is still broken or already fixed. After the state is determined, a message is formed on its basis which is ready to be send. The Gitter API client was used for sending which was available in a ruby gem \textit{ruby-gitter}\footnote{\url{https://github.com/kristenmills/ruby-gitter}}. The client requires a Gitter token that is generated from a GitHub account, to establish a connection with the Gitter room and to post the created message.
 
 %=====================================================================================
 \chapter{Conclusion}

@@ -22,6 +22,7 @@ $(CO).pdf: clean
 	pdflatex -draftmode $(CO)
 	pdflatex $(CO)
 	cp $(CO).pdf ../PDF/thesis.pdf
+	cp zadani.pdf ../PDF/assignment.pdf
 
 $(CO).dvi: $(CO).tex $(CO).bib
 	latex $(CO)

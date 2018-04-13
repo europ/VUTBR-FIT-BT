@@ -1,8 +1,6 @@
-Brno University of Technology - Faculty of Information Technology
+## Brno University of Technology - Faculty of Information Technology<br>Bachelor's Thesis<br>2017/2018
 
-Bachelor's Thesis
-
-2017/2018
-
+* [assignment](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/assignment.pdf)
 * [thesis](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/thesis.pdf)
 * [presentation](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/presentation.pdf)
+* [implementation](https://gist.github.com/europ/549784b0c4469c25d7235d29de077b63)
