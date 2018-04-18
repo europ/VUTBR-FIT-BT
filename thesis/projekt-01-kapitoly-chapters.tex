@@ -527,7 +527,9 @@ The fact that the project's pull requests have to be mergeable even thought, tha
     \label{fig:codeowners_settings}
 \end{figure}
 
-The example in Figure \ref{fig:codeowners_settings} shows the pull request reviews settings. The subsettings of \uv{\textit{Require pull request reviews before merging}} may not be set without \uv{\textit{Required approving reviews}} which minimal value is one. The developers would like to have this helpful enhancement of the development provided by the GitHub. Solution how to solve this problem resulted in a design which will enhance the bot - addition of a new feature to the bot which will keep the pull request mergeable.
+The example in Figure \ref{fig:codeowners_settings} shows the pull request reviews settings. The subsettings of \uv{\textit{Require pull request reviews before merging}} may not be set without \uv{\textit{Required approving reviews}} whose minimal value is one. The developers would like to be in possession with this helpful supplement of the development provided by the GitHub. Solution how to solve this problem resulted in a proposition which will enhance the bot - addition of a new feature to the bot which will keep the pull request mergeable.\\
+
+During the implementation process of this task, GitHub unexpectedly adapted this feature as it was expected. Codeowners were requested for a pull request review automatically if the repository dispose of the codeowners file. These automated review requests were optional and they leave the pull request mergeable. The pull request\footnote{\url{https://github.com/ManageIQ/miq_bot/pull/417}} containing the unaccomplished implementation of that task was on this basis of premature refurbishment closed.
 
 %=====================================================================================
 \chapter{Conclusion}
