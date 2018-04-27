@@ -724,12 +724,22 @@ Management}{\@fit@EN}%
 % Název práce / Thesis title
 \iftoggle{long_title}{
   \mkuctxttl{18}{\@titlelen}{\ifslovak\@title@CS\else\ifczech\@title@CS\else\@title@EN\fi\fi}
-  \mkuctxtt{10}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
+  \mkuctxttl{10}{\@titlelen}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
 }{
-  \mkuctxtt{18}{\ifslovak\@title@CS\else\ifczech\@title@CS\else\@title@EN\fi\fi}
-  \mkuctxtt{10}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
+  \mkuctxtt{18}{\@titlelen}{\ifslovak\@title@CS\else\ifczech\@title@CS\else\@title@EN\fi\fi}
+  \mkuctxtt{10}{\@titlelen}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
 }
 \vfill
+
+% == OLD ==
+%\iftoggle{long_title}{
+%  \mkuctxttl{18}{\@titlelen}{\ifslovak\@title@CS\else\ifczech\@title@CS\else\@title@EN\fi\fi}
+%  \mkuctxtt{10}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
+%}{
+%  \mkuctxtt{18}{\ifslovak\@title@CS\else\ifczech\@title@CS\else\@title@EN\fi\fi}
+%  \mkuctxtt{10}{\ifslovak\@title@EN\else\ifczech\@title@EN\else\@title@CS\fi\fi}
+%}
+%\vfill
 
 \mkuctxtt{14}{\ifslovak\@projecttype@SK\else\ifczech\@projecttype@CS\else\@projecttype@EN\fi\fi}
 \iftoggle{slovak_used}{

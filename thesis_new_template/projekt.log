@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.11)  22 APR 2018 20:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.11)  27 APR 2018 09:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1725,9 +1725,13 @@ Underfull \vbox (badness 10000) detected at line 169
 LaTeX Font Info:    Font shape `T1/fos/bx/n' in size <10> not available
 (Font)              Font shape `T1/fos/b/n' tried instead on input line 169.
 
-Overfull \hbox (15.24222pt too wide) in paragraph at lines 169--169
+Underfull \hbox (badness 2790) in paragraph at lines 169--169
 \T1/fos/b/n/10 PRóBÖöN¡ IN-TE-GRACE A AU-TOM-A-TI-ZO-VAN¡ KON-TROLA K”DU V PRO-
-JEK-TECH S OTEVêEN›M
+JEK-TECH S
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 169
  []
 
 <zadani.pdf, id=206, 597.432pt x 844.95674pt>
@@ -2152,7 +2156,7 @@ Package rerunfilecheck Info: File `projekt.out' has not changed.
 Here is how much of TeX's memory you used:
  33365 strings out of 493029
  592692 string characters out of 6136233
- 665882 words of memory out of 5000000
+ 665890 words of memory out of 5000000
  36071 multiletter control sequences out of 15000+600000
  119090 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2173,7 +2177,7 @@ f/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmtt9.pfb>
-Output written on projekt.pdf (40 pages, 4960536 bytes).
+Output written on projekt.pdf (40 pages, 4960540 bytes).
 PDF statistics:
  994 PDF objects out of 1000 (max. 8388607)
  808 compressed objects within 9 object streams
