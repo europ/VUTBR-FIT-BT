@@ -307,44 +307,6 @@ My Notes:
 
 %=====================================================================================
 %=====================================================================================
-\chapter{Open Source Projects}
-%=====================================================================================
-%=====================================================================================
-
-{\color{red}\textbf{TODO}}
-
-%=====================================================================================
-\section{Open Source}
-%=====================================================================================
-
-{\color{red}\textbf{TODO}}
-
-%=====================================================================================
-\section{Red Hat, Inc}
-%=====================================================================================
-
-{\color{red}\textbf{TODO}}
-
-%=====================================================================================
-\section{Github}
-%=====================================================================================
-
-{\color{red}\textbf{TODO}}
-
-%=====================================================================================
-\section{TravisCI}
-%=====================================================================================
-
-{\color{red}\textbf{TODO}}
-
-%=====================================================================================
-\section{ManageIQ}
-%=====================================================================================
-
-{\color{red}\textbf{TODO}} \url{https://lwn.net/Articles/680060/}
-
-%=====================================================================================
-%=====================================================================================
 \chapter{Implementation}
 %=====================================================================================
 %=====================================================================================
@@ -376,7 +338,7 @@ During the integration process, a few problems were discovered which had to be r
 The integration process of Pronto involves implementation of Pronto result converter, unit tests, bug fixes and enhancements with some of them being designed after review of the pull request\footnote{\url{https://github.com/ManageIQ/miq_bot/pull/406}} by the developers. To integrate Pronto without changing the original behavior of the bot required to launch pronto with the authentic linters and convert the pronto result to match the original data structure pattern of the offenses. Obtainment part of the pronto creates a temporary folder in which is the entire folder including the examined repository copied. After that, a repository object is created based on the actual temporary folder content which is fetched. The last stage of this part rests in gathering the patches which are passed to the pronto runners. The execution of pronto runners results in the expected output - an array of pronto-message objects. An one object which has type of pronto-message contains every information about one patch of line including the linter result describing this line. An example of a single pronto-message is shown in Figure \ref{fig:pronto_message}.
 
 \begin{figure}[H]
-\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.13\textwidth]
+\begin{lstlisting}[basicstyle=\scriptsize, xleftmargin=.21\textwidth]
 #<Pronto::Message:0x000056452d8dcef8
  @commit_sha="1d4e09dc52421b8adeab39f37728aca95a4fc462",
  @level=:warning,
@@ -408,7 +370,7 @@ The integration process of Pronto involves implementation of Pronto result conve
 After obtaining the pronto result in form of an array of pronto-message objects the creation of the identical data structure which has to match the pattern of the original data structure can begin. Originally the linters were run sequentially while their results were appended into an array which is shown in Figure \ref{fig:run_all_linters}. The result was a data structure including structures about the detected offenses belonging to the specific files sorted by linters. This type of liters lauching is via Pronto much more easier because of the developers have to specify only the gem in the gemfile and there is no need to change a large amount of source code. A Gemfile describes the gem dependencies required to execute associated Ruby code \cite{Gemfile}. Expected linters have to be specified only in gemfile by using the corresponding gems for the Pronto runners responsible for the linters.
 
 \begin{figure}[H]
-\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.2\textwidth]
+\begin{lstlisting}[basicstyle=\scriptsize, xleftmargin=.27\textwidth]
 unmerged_results = []
 unmerged_results << Linter::Rubocop.new(branch).run
 unmerged_results << Linter::Haml.new(branch).run
@@ -425,7 +387,7 @@ The example shown in Figure \ref{fig:run_all_linters} is a function body which w
 Except the pronto integration a bug was detected and it had to be fixed via a pull request\footnote{\url{https://github.com/prontolabs/pronto-rubocop/pull/35}} into the pronto runner for RuboCop. After code analysis by this RuboCop runner, the runner does not return a detected offense in the source code describing the syntactical error. The syntactical error was detected by the RuboCop as an offense, see Figure \ref{fig:syntax_offense}, but it was not mapped to the final result of its runner.
 
 \begin{figure}[H]
-\begin{lstlisting}[language=Ruby, basicstyle=\scriptsize, xleftmargin=.06\textwidth]
+\begin{lstlisting}[basicstyle=\scriptsize, xleftmargin=.14\textwidth]
 #<RuboCop::Cop::Offense:0x00007fc750319218
  @cop_name="Lint/Syntax",
  @location=

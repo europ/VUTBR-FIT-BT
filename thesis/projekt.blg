@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: projekt.aux
+The style file: bib-styles/englishiso.bst
+Database file #1: projekt-20-literatura-bibliography.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--to sort, need author or key in TravisTorrentWEBPAGE
+Warning--to sort, need author or key in GHTorrentWEBPAGE
+Warning--to sort, need author or key in deployment_automation
+Warning--to sort, need author or key in MIQBOT
+Warning--to sort, need author or key in GITHUB-PRONTO
+Warning--to sort, need author or key in Gemfile
+Warning--to sort, need author or key in GITHUB_STATUS_API
+Warning--to sort, need author or key in GITHUB_ABOUT_STATUSES
+Warning--to sort, need author or key in OCTOKIT
+Warning--to sort, need author or key in GITTER
+You've used 37 entries,
+            3151 wiz_defined-function locations,
+            902 strings with 13544 characters,
+and the built_in function-call counts, 14893 in all, are:
+= -- 1103
+> -- 388
+< -- 16
++ -- 200
+- -- 108
+* -- 807
+:= -- 1569
+add.period$ -- 74
+call.type$ -- 37
+change.case$ -- 174
+chr.to.int$ -- 0
+cite$ -- 47
+duplicate$ -- 1446
+empty$ -- 1497
+format.name$ -- 123
+if$ -- 3311
+int.to.chr$ -- 0
+int.to.str$ -- 37
+missing$ -- 330
+newline$ -- 157
+num.names$ -- 54
+pop$ -- 823
+preamble$ -- 1
+purify$ -- 124
+quote$ -- 0
+skip$ -- 547
+stack$ -- 0
+substring$ -- 526
+swap$ -- 748
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 146
+warning$ -- 10
+while$ -- 75
+width$ -- 39
+write$ -- 360
+(There were 10 warnings)
