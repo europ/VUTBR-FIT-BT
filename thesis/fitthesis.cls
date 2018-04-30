@@ -415,7 +415,7 @@ Management}{\@fit@EN}%
 \newcommand{\mkuctxt}[2]{\vbox{\setfontsize{#1}\noindent\MakeUppercase{#2}}\vspace\mkspc}
 \newcommand{\mkuctxtt}[2]{\vbox{\setfontsize{#1}\fosfamily\bfseries\noindent\MakeUppercase{#2}}\vspace\mkspc}
 % Pro název práce na 2 řádky / For the 2-line thesis title
-\newcommand{\mkuctxttl}[3]{\vbox to 1.0cm{\noindent\parbox{#2}{\setfontsize{#1}\fosfamily\bfseries\noindent\MakeUppercase{#3}}}\vspace\mkspc}
+\newcommand{\mkuctxttl}[3]{\vbox to 0.75cm{\noindent\parbox{#2}{\setfontsize{#1}\fosfamily\bfseries\noindent\MakeUppercase{#3}}}\vspace\mkspc}
 \newcommand{\mkuctxttlr}[3]{\vbox to 1.0cm{\noindent\parbox{#2}{\fontsize{#1}{14}\fosfamily\bfseries\noindent\MakeUppercase{#3}}}\vspace\mkspc}
 \newcommand{\mkuctxtc}[2]{\vbox{\setfontsize{#1}\ifCOPEN\fosfamily\fi\ifCBOPEN\fosfamily\bfseries\fi\noindent\MakeUppercase{#2}}\vspace\mkspc}
 %bold
