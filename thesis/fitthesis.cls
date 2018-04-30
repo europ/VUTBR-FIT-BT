@@ -88,7 +88,7 @@
   \ifzadani
     \usepackage{pdfpages}
   \else % neni potreba pdfpages / pdfpages is not necessary
-    \usepackage[pdftex]{graphicx}
+    %\usepackage[pdftex]{graphicx}
   \fi
 \fi
 
@@ -973,7 +973,7 @@ Management}{\@fit@EN}%
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{ragged2e}
-\usepackage{graphicx}
+%\usepackage{graphicx}
 \usepackage{url}
 \DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
 \def\UrlBreaks{\do\/\do-}
