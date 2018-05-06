@@ -135,13 +135,21 @@
 
 \begin{frame}\frametitle{Objectives}
     \begin{itemize}
-        \item \textit{Pronto}\footnote{\color{cyan}\href{https://github.com/prontolabs/pronto}{github.com/prontolabs/pronto}} integration\\[0.5em]
-        \item \textit{Webhooks}\footnote{\color{cyan}\href{https://developer.github.com/webhooks}{developer.github.com/webhooks}} integration\\[0.5em]
-        \item Request for review command implementation\\[0.5em]
-        \item \textit{Gitter} integration (yell if master is broken)\\[0.5em]
-        \item \textit{Pull Request Processor}\footnote{\color{cyan}\href{https://github.com/theforeman/prprocessor}{github.com/theforeman/prprocessor}} integration\\[0.5em]
+        \item \textit{Pronto}\footnotemark \ integration\\[0.5em]
+        \item MiqBot's own \textit{Pronto}\footnotemark[\value{footnote}] Formatter\\[0.5em]
+
+        \footnotetext{\color{cyan}\href{https://github.com/prontolabs/pronto}{github.com/prontolabs/pronto}} 
+
+        \item \textit{Gitter}\footnote{\color{cyan}\href{https://github.com/kristenmills/ruby-gitter}{github.com/kristenmills/ruby-gitter}} integration (yell if master is broken)\\[0.5em]
         \item \textit{Github Status API}\footnote{\color{cyan}\href{https://developer.github.com/v3/repos/statuses}{developer.github.com/v3/repos/statuses}} integration\\[0.5em]
-        \item Track dependent pull requests (comment if merged)
+        \item Remove unnecessary unmergeable comments
+        \item Commands\\
+            \begin{itemize}
+                \item pull request review request from specified user(s)
+                \item remove pull request review request from specified user(s)
+                \item remove assigned user(s)
+            \end{itemize}
+        \item Automated review request of a new pull request
     \end{itemize}
 \end{frame}
 
