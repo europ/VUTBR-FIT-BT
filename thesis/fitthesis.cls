@@ -571,13 +571,14 @@ Management}{\@fit@EN}%
 
 %Rozsireny abstrakt / Extended abstract
 \newcommand\makeextendedabstract{%
-  \thispagestyle{empty}%
+  \pagestyle{empty}%
   \ifenslovak
     \mktxt@b{16}{\@extendedabstract@SK}\noindent\@textendedabstract
   \else
     \mktxt@b{16}{\@extendedabstract@CS}\noindent\@textendedabstract
   \fi
   \newpage
+  \pagestyle{plain}
 }
 
 %-----------------------------------------------------------------------------
