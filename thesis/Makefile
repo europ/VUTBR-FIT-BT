@@ -49,7 +49,7 @@ rename:
 	sed -i "s/$(CO)-30-prilohy-appendices/$(NAME)-30-prilohy-appendices/g" $(NAME).tex
 	sed -i "s/$(CO)-40-rozsirenyabstrakt-extendedabstract/$(NAME)-40-rozsirenyabstrakt-extendedabstract/g" $(NAME).tex
 	sed -i "s/$(CO)/$(NAME)/g" Makefile
-	
+
 # Pozor, vlna neresi vse (viz popis.txt) / Warning - vlna is not solving all problems (see description.txt)
 vlna:
 	vlna -l $(CO)-*.tex
@@ -57,3 +57,7 @@ vlna:
 # Spocita normostrany / Count of standard pages
 normostrany:
 	@echo "scale=2; `detex -n $(CO)-[01]*.tex | wc -c`/1800;" | bc
+
+# Spocita normostrany rozsireneho abstractu / Count of standard pages of extended abstract
+normostrany-extabs:
+	@echo "scale=2; `detex -n $(CO)-[4]*.tex | wc -c`/1800;" | bc
