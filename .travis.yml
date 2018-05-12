@@ -1,0 +1,13 @@
+notifications:
+  email: false
+
+os: linux
+sudo: false
+addons:
+  apt:
+    packages:
+      - texlive-full
+
+script:
+  - make travis-build -C thesis
+  - make travis-build -C presentation

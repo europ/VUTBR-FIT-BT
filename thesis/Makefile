@@ -61,3 +61,9 @@ normostrany:
 # Spocita normostrany rozsireneho abstractu / Count of standard pages of extended abstract
 normostrany-extabs:
 	@echo "scale=2; `detex -n $(CO)-[4]*.tex | wc -c`/1800;" | bc
+
+travis-build: clean
+	pdflatex -halt-on-error -draftmode $(CO)
+	bibtex $(CO)
+	pdflatex -halt-on-error -draftmode $(CO)
+	pdflatex -halt-on-error $(CO)

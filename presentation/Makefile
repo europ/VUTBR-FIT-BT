@@ -10,3 +10,6 @@ silent:
 
 clean:
 	rm -f *.aux *.log *.nav *.out *.snm *.toc
+
+travis-build: clean
+	pdflatex -halt-on-error $(FILE).tex
