@@ -27,30 +27,21 @@
 
 \begin{document}
 
+% 1
 \frame[plain]{\titlepage}
 
+% 2
 \begin{frame}\frametitle{Introduction}
     \begin{center}
         \begin{tabular}{l}
-            What is \textit{Continuous Integration}?\\[1em]
-            What is \textit{Automated Code Review}?\\[1em]
-            Where is it used and why?\\[1em]
-            How it works?
+            Continuous Integration \& Automated Code Review\\[1em]
+            Red Hat, Inc. \& ManageIQ\\[1em]
+            ManageIQ Bot
         \end{tabular}
     \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Continuous Integration}
-    \begin{itemize}
-        \item common part of fast software development\\[1em]
-        \item adaptive development technique\\[1em]
-        \item reduce integration problems\\[1em]
-        \item integrations are verified via automated tests and builds\\[1em]
-        \item popular in open source projects which are frequently developed by a group of people\\[1em]
-        \item available CI services: \textit{Travis CI}, \textit{Jenkins}, \textit{TeamCity}, ...
-    \end{itemize}
-\end{frame}
-
+% 3
 \begin{frame}\frametitle{Components of CI System}
     \begin{figure}[H]
         \centering
@@ -58,81 +49,24 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}\frametitle{Basics of CI}
-    \begin{multicols}{2}
-        Stages of CI:
-        \begin{enumerate}
-            \item Change
-            \item Reaction
-            \item Feedback
-            \item Waiting 
-        \end{enumerate}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.5]{eps/stages_of_ci.eps}
-        \end{figure}
-    \end{multicols}
-\end{frame}
-
-\begin{frame}\frametitle{Basics of CI}
-    \begin{centering}
-        \large{How it works?}\\[1em]
-    \end{centering}
-    \begin{figure}[H]
-        \centering
-        \hspace{-1.7em} \includegraphics[scale=0.4]{eps/build_script.eps}
-    \end{figure}
-\end{frame}
-
-\begin{frame}\frametitle{Code Review}
-    Types of code review:\\[0.5em]
+% 4
+\begin{frame}\frametitle{ManageIQ Bot}
     \begin{itemize}
-        \item manual code review
+        \item Ruby 2.3.6\\[1em]
+        \item Sidekiq
             \begin{itemize}
-                \item[$\circ$] collaborative inspection and discussion with project members\\[0.25em]
-                \item[$\circ$] slow (nearly 100 lines of code per hour)\\[0.25em]
-                \item[$\circ$] pair programming\\[1em]
+                \item background processing for Ruby
+                \item nonrecurring \& recurring workers\\[1em]
             \end{itemize}
-        \item automated code review
+        \item Octokit
             \begin{itemize}
-                \item[$\circ$] \dots
+                \item Ruby toolkit for the GitHub API\\[1em]
             \end{itemize}
-            
+        \item Redis \& PostgreSQL
     \end{itemize}
 \end{frame}
 
-\begin{frame}\frametitle{Automated Code Review}
-    \begin{itemize}
-        \item inspection of code quality
-            \begin{itemize}
-                \item[$\circ$] coding standards
-                \item[$\circ$] trailing spaces
-                \item[$\circ$] code duplication
-                \item[$\circ$] not enough / too many comments
-                \item[$\circ$] \dots\\[1em]
-            \end{itemize}
-        \item detection of basic mistakes and vulnerabilities\\[1em]
-        \item matching set of rules providing static analysis\\[1em]
-        \item Code Climate, RuboCop, SonarQube, RIPS, FlexeLint
-    \end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Code Review}
-    \begin{multicols}{2}
-        \centering \large Manual\\[1em]
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.4]{eps/code_review_1.eps}
-        \end{figure}
-        \centering \large Automated
-        \begin{figure}[H]
-            \centering
-            \includegraphics[scale=0.4]{eps/code_review_2.eps}
-            \\[1em]
-        \end{figure}
-    \end{multicols}
-\end{frame}
-
+% 5
 \begin{frame}\frametitle{Objectives}
     \begin{itemize}
         \item \textit{Pronto}\footnotemark \ integration\\[0.5em]
@@ -153,6 +87,23 @@
     \end{itemize}
 \end{frame}
 
+% 6
+\begin{frame}\frametitle{Pronto Integration}
+\end{frame}
+
+% 7
+\begin{frame}\frametitle{Gitter Integration}
+\end{frame}
+
+% 8
+\begin{frame}\frametitle{GitHub Status API Integration}
+\end{frame}
+
+% 9
+\begin{frame}\frametitle{Interface Commands}
+\end{frame}
+
+% 11
 \bluepage{Thank You For Your Attention !}
 
 \end{document}

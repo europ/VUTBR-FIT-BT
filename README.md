@@ -7,4 +7,5 @@
 * [thesis](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/thesis.pdf)
 * [presentation](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/presentation.pdf)
 * [implementation](https://github.com/europ/VUTBR-FIT-BT/blob/master/PRs.md)
-* [setup guide](https://github.com/europ/VUTBR-FIT-BT-IMPL)
+* [setup guide](https://github.com/europ/VUTBR-FIT-BT-IMPL)<br><br>
+* [presentation (RH)](https://github.com/europ/VUTBR-FIT-BT/blob/master/redhat/ManageIQ%20Bot.pdf)
