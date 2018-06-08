@@ -8,4 +8,5 @@
 * [presentation](https://github.com/europ/VUTBR-FIT-BT/blob/master/PDF/presentation.pdf)
 * [implementation](https://github.com/europ/VUTBR-FIT-BT/blob/master/PRs.md)
 * [setup guide](https://github.com/europ/VUTBR-FIT-BT-IMPL)<br><br>
-* [presentation (RH)](https://github.com/europ/VUTBR-FIT-BT/blob/master/redhat/ManageIQ%20Bot.pdf)
+* [presentation (defence)](https://github.com/europ/VUTBR-FIT-BT/blob/master/presentation_defence/presentation.pdf)
+* [presentation (RH)](https://github.com/europ/VUTBR-FIT-BT/blob/master/presentation_redhat/ManageIQ%20Bot.pdf)
